@@ -188,4 +188,3 @@ npm run build
 **ฐานข้อมูล:** เมื่อเชื่อม MongoDB ครั้งแรก Backend จะสร้าง Index ของ Collection `transport_ledger` ให้อัตโนมัติ ไม่แตะประวัติเดิม สร้าง `.env` ใน `backend` จาก `.env.example` แล้วตั้ง `MONGODB_URI`, `MONGODB_DB=test_system_db`, `JWT_SECRET` ที่เป็นความลับใหม่ ก่อนเริ่มระบบ กรุณาเพิ่มทะเบียนรถในเมนูรถและคนขับก่อนทำรายการ
 
 **ทดสอบโปรแกรม:** รัน `npm run install:all` จากโฟลเดอร์หลัก (ต้องมีอินเทอร์เน็ตเพื่อดาวน์โหลดแพ็กเกจ) แล้ว `npm run dev:backend` กับ `npm run dev:frontend` ในเทอร์มินัลแยกกัน หลังจากตั้งค่า MongoDB และสร้างบัญชี Owner ตามคู่มือเดิม
-"# TEST-SYSTEM-JPS-RENDER" 

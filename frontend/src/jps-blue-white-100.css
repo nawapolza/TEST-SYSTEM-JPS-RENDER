@@ -1,0 +1,61 @@
+/* JPS BLUE + WHITE — FINAL GLOBAL THEME LAYER
+   Imported LAST in main.jsx so legacy page styles cannot override brand colors. */
+:root{
+  color-scheme:light;
+  --jps-navy:#12345b;--jps-blue-950:#12345b;--jps-blue-900:#174678;--jps-blue-800:#155a9e;
+  --jps-blue-700:#1769c2;--jps-blue-600:#287fda;--jps-blue-500:#4b9be8;
+  --jps-blue-300:#9bcafa;--jps-blue-200:#c7e2fb;--jps-blue-100:#e4f2ff;--jps-blue-50:#f2f8ff;
+  --jps-white:#fff;--jps-page:#f4f8fc;--jps-panel:#fff;--jps-line:#d6e4f2;
+  --jps-ink:#1b3048;--jps-muted:#5f7185;--jps-focus:#2685e5;
+  --primary:#1769c2;--primary-color:#1769c2;--brand-primary:#1769c2;--accent:#287fda;
+  --surface:#fff;--surface-muted:#f4f8fc;--line:#d6e4f2;
+  --rf-red:#1769c2;--rf-red-dark:#174678;--rf-pale:#f2f8ff;
+  --brand-red:#1769c2;--brand-pink:#e4f2ff;--danger:#b42335;--error:#b42335;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body,#root{background:var(--jps-page)!important;color:var(--jps-ink);max-width:100%;min-width:0}
+body{font-family:Inter,"Noto Sans Thai",Tahoma,system-ui,sans-serif}
+#root,.app,.app-shell,.layout,.main-content,.page-container,.page-content,.content,.dashboard,.workspace,.app-main{min-width:0;max-width:100%}
+/* Main frame, headers and navigation */
+header,.app-header,.topbar,.navbar,.rf-header,.rf-topbar,.nova-topbar,.sidebar,.side-nav,.app-sidebar,.mobile-header{background:#fff!important;color:var(--jps-ink)!important;border-color:var(--jps-line)!important}
+nav a,.sidebar a,.side-nav a,.nav-link,.rf-tab,.nova-route-item{color:var(--jps-ink)}
+nav a:hover,.sidebar a:hover,.side-nav a:hover,.nav-link:hover,.nova-route-item:hover{background:var(--jps-blue-50)!important;color:var(--jps-blue-900)!important}
+nav a.active,.sidebar a.active,.side-nav a.active,.nav-link.active,.rf-tab.active,.rf-tab.is-active,.nova-route-item.is-active,.mobile-nav .active{background:var(--jps-blue-700)!important;color:#fff!important;border-color:var(--jps-blue-700)!important}
+/* Cards, panels, modal, popups and receipt capture */
+.card,.card-clean,.section-card,.section-head,.ledger-panel,.panel,.panel-card,.modal,.modal-content,.dialog,.dialog-content,.popup,.popup-content,.stat-card,.summary-card,.table-card,.form-card,.receipt-card,.receipt-preview,.capture-receipt-modal,.toast,.dropdown-menu{background:#fff!important;color:var(--jps-ink);border-color:var(--jps-line)!important}
+.card-header,.panel-heading,.section-head,.table thead,.table-wrap thead,.table-header,.modal-header,.dialog-header{background:var(--jps-blue-50)!important;color:var(--jps-blue-900)!important;border-color:var(--jps-line)!important}
+.page-title,.section-title,h1,h2,h3,h4{color:var(--jps-blue-950)}
+.hero,.page-hero,.page-orbit,.hero-clean,.ledger-hero,.kw-finance-net{background:linear-gradient(120deg,#12345b 0%,#1769c2 70%,#4b9be8 100%)!important;color:#fff!important;border-color:#1769c2!important}
+/* All buttons share accessible contrast; destructive actions remain red intentionally */
+button,.btn,.button,[role=button],input[type=button],input[type=submit]{font:inherit;border-radius:10px;max-width:100%;transition:background-color .15s,border-color .15s,box-shadow .15s}
+button:not(.btn-primary):not(.button-primary):not(.primary-button):not(.danger):not(.btn-danger):not([data-action="delete"]),.btn:not(.btn-primary):not(.btn-danger),.button:not(.button-primary){border-color:var(--jps-line)}
+.btn-primary,.button-primary,.primary-button,.submit-primary,button.primary,button[type=submit],input[type=submit],[data-variant="primary"]{background:var(--jps-blue-700)!important;color:#fff!important;border:1px solid var(--jps-blue-700)!important;font-weight:700}
+.btn-primary:hover,.button-primary:hover,.primary-button:hover,.submit-primary:hover,button.primary:hover,button[type=submit]:hover,input[type=submit]:hover{background:var(--jps-blue-900)!important;color:#fff!important}
+.btn-secondary,.button-secondary,.secondary-button,button.secondary,.btn-soft,.button-soft{background:#fff!important;color:var(--jps-blue-900)!important;border:1px solid var(--jps-blue-200)!important}
+.btn-secondary:hover,.button-secondary:hover,.secondary-button:hover,button.secondary:hover,.btn-soft:hover,.button-soft:hover{background:var(--jps-blue-50)!important}
+/* Replace legacy brand red/pink surfaces, while preserving status/error/danger semantics */
+.rf-brand,.rf-brand-mark,.rf-system-indicator,.nova-brand,.nova-brand-mark,.nova-command-icon,.nova-route-node,.section-icon,.ledger-heading-icon,.brand-badge,.brand-icon,.logo-tile{background:var(--jps-blue-100)!important;color:var(--jps-blue-900)!important;border-color:var(--jps-blue-200)!important}
+.rf-red,.rf-red-bg,.brand-red,.brand-pink,.pink-badge,.red-brand-badge{background:var(--jps-blue-50)!important;color:var(--jps-blue-900)!important;border-color:var(--jps-blue-200)!important}
+/* Form controls */
+input:not([type=checkbox]):not([type=radio]):not([type=range]),select,textarea{background:#fff;color:var(--jps-ink);border:1px solid #c7d8e9;border-radius:9px;max-width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--jps-blue-600)!important;box-shadow:0 0 0 3px rgba(40,127,218,.15)!important;outline:none}
+label,.form-label,.field-label{color:#24415f;font-weight:650}
+::placeholder{color:#8192a5;opacity:1}
+/* Tables */
+table{border-color:var(--jps-line)}
+thead th{background:var(--jps-blue-50)!important;color:var(--jps-blue-900)!important;border-color:var(--jps-line)!important}
+tbody tr:nth-child(even){background:#f8fbff}
+tbody tr:hover{background:#edf6ff}
+th,td{border-color:var(--jps-line)}
+/* Chips and status pills: keep semantic green/amber/red indicators */
+.badge-primary,.pill-primary,.status-primary,.tag-primary{background:var(--jps-blue-100)!important;color:var(--jps-blue-900)!important;border-color:var(--jps-blue-200)!important}
+/* Image, print/capture popup and responsive fit */
+img,svg,canvas,video{max-width:100%}
+@media(max-width:768px){
+ .page-container,.page-content,.main-content,.content{padding-left:12px!important;padding-right:12px!important}
+ .form-grid,.stats-grid,.dashboard-grid{grid-template-columns:minmax(0,1fr)!important}
+ .toolbar,.action-row,.page-actions{display:flex;flex-wrap:wrap;gap:8px}
+ .table-wrap,.table-responsive{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+ button,.btn,.button{min-height:40px}
+}
+@media print{body,html,#root{background:#fff!important;color:#111!important}.no-print,button,.sidebar,.topbar{display:none!important}.modal,.modal-content,.receipt-preview{box-shadow:none!important;border:0!important;max-width:100%!important}}

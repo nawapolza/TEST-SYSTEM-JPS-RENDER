@@ -9,6 +9,7 @@ import './accessible-update.css';
 import './responsive-ton-layout.css';
 import './theme-finish.css';
 import './mobile-ledger-one-line.css';
+import './jps-professional-overrides.css';
 
 function markDeviceMode() {
   try {
@@ -27,3 +28,8 @@ createRoot(document.getElementById('root')).render(
   <App />,
 );
 import './jps-brand.css';
+
+import './jps-final-theme.css';
+
+// Must be imported last: unified JPS blue/white theme overrides legacy page styles.
+import './jps-blue-white-100.css';

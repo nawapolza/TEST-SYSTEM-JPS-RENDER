@@ -1,0 +1,91 @@
+/* TEST SYSTEM — JPS professional blue/white design system */
+:root{
+ --jps-primary:#1769c2;--jps-primary-hover:#0f4f98;--jps-primary-strong:#123e73;
+ --jps-primary-soft:#eaf4ff;--jps-sky:#d8ebff;--jps-border:#d8e5f3;
+ --jps-text:#172b43;--jps-muted:#62758b;--jps-surface:#fff;--jps-bg:#f4f8fc;
+ --jps-success:#16845b;--jps-warning:#a86500;--jps-danger:#b42335;
+ --rf-red:var(--jps-primary);--rf-red-dark:var(--jps-primary-hover);--rf-pale:var(--jps-primary-soft);
+ color-scheme:light;
+}
+html,body,#root{min-height:100%;background:var(--jps-bg)!important;color:var(--jps-text)!important}
+body{font-family:Inter,"Noto Sans Thai",Tahoma,system-ui,sans-serif;line-height:1.5}
+*{box-sizing:border-box}
+button,[role=button],input,select,textarea{font:inherit}
+button{min-height:40px;cursor:pointer;transition:background-color .16s ease,border-color .16s ease,box-shadow .16s ease,transform .16s ease}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #86bfff!important;outline-offset:2px!important}
+input,select,textarea,.input,.input-compact{max-width:100%;border:1px solid #c8d8e9!important;border-radius:10px!important;background:#fff!important;color:var(--jps-text)!important;min-height:42px}
+input:focus,select:focus,textarea:focus,.input:focus,.input-compact:focus{border-color:var(--jps-primary)!important;box-shadow:0 0 0 3px #1769c21c!important;outline:0}
+button.btn-primary,button.submit-primary,.btn-primary,.submit-primary,[type=submit]{background:var(--jps-primary)!important;color:#fff!important;border:1px solid var(--jps-primary)!important;border-radius:10px!important;font-weight:700;box-shadow:0 3px 8px #1769c21b!important}
+button.btn-primary:hover,button.submit-primary:hover,.btn-primary:hover,.submit-primary:hover,[type=submit]:hover{background:var(--jps-primary-hover)!important;border-color:var(--jps-primary-hover)!important}
+button.btn-soft,.btn-soft,.kw-list-actions button,.kw-user-tabs button,.kw-modal-close{background:var(--jps-primary-soft)!important;color:var(--jps-primary-strong)!important;border:1px solid #c5def8!important;border-radius:10px!important}
+button:disabled{opacity:.55;cursor:not-allowed}
+a{color:var(--jps-primary)}
+.card,.card-clean,.mobile-form-card,.section-card,.section-head,.ledger-panel,.app-form-card,.panel,.modal-content{border-color:var(--jps-border)!important;border-radius:14px!important;box-shadow:0 4px 16px #173d6510}
+.section-head{background:#f0f6fd!important}
+.rf-header,.rf-topbar,.nova-topbar,.nova-rail{background:#fff!important;border-color:var(--jps-border)!important}
+.rf-tab.is-active,.rf-mobile-dock button.is-active,.nova-route-item.is-active{background:var(--jps-primary)!important;color:#fff!important}
+.rf-wordmark strong,.kw-bill-detail strong,.kw-bill-detail h2,.kw-modal-header,.kw-finance-heading,.nova-brand-copy strong,.nova-route-copy strong{color:var(--jps-primary-strong)!important}
+.nova-brand,.nova-system-pill,.rf-system-indicator,.nova-route-item:hover{background:var(--jps-primary-soft)!important;border-color:#c5def8!important;color:var(--jps-primary-strong)!important}
+.nova-brand-mark,.nova-brand-mark>span,.nova-brand-mark>span>span,.nova-route-node,.nova-command-icon,.nova-account-avatar,.section-icon,.ledger-heading-icon,.nova-user-avatar{background:var(--jps-primary-soft)!important;color:var(--jps-primary)!important;border-color:#c5def8!important}
+.page-orbit,.hero-clean,.ledger-hero,.kw-finance-net{background:linear-gradient(120deg,#123e73 0%,#1769c2 65%,#49a3ef 100%)!important;border-color:var(--jps-primary)!important;box-shadow:0 12px 28px #1769c21b!important}
+.nova-route-item.is-active .nova-route-node{background:#fff!important;color:var(--jps-primary)!important}
+.table-wrap,table{max-width:100%;border-color:var(--jps-border)}
+thead th{background:#edf5fd!important;color:#25486c!important;font-weight:700}
+td,th{border-color:#e0eaf4!important}
+tbody tr:hover{background:#f5faff!important}
+.badge,.pill,.status-pill{border-radius:999px;font-weight:650}
+img{max-width:100%;height:auto}
+/* Remove legacy red/purple accent colors without recoloring semantic error text */
+.text-red-50,.text-red-100,.text-red-200,.text-red-300,.text-red-400,.text-red-500,.text-red-600,.text-red-700,.text-red-800,.text-red-900{color:var(--jps-primary)!important}
+.bg-red-50,.bg-red-100,.bg-red-200{background:var(--jps-primary-soft)!important}
+.border-red-100,.border-red-200,.border-red-300{border-color:#c5def8!important}
+/* Keep true destructive actions recognizable */
+button.danger,button.btn-danger,.text-danger,.error-text{color:var(--jps-danger)!important}
+@media(max-width:768px){
+ body{font-size:15px}
+ .container,.page-container,.content,.main-content{width:100%;max-width:100%;padding-left:12px!important;padding-right:12px!important}
+ .card,.card-clean,.mobile-form-card,.section-card,.ledger-panel,.app-form-card{border-radius:12px!important}
+ button{min-height:44px}
+ input,select,textarea,.input,.input-compact{min-height:44px;font-size:16px!important}
+ table{font-size:13px}
+ .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+}
+@media print{body,html,#root{background:#fff!important}.rf-header,.nova-rail,.rf-mobile-dock,button,.no-print{display:none!important}.card,.card-clean,.section-card{box-shadow:none!important;break-inside:avoid}}
+
+/* Whole-app consistency pass: normalize legacy red/pink brand surfaces to JPS blue/white. */
+:root{
+ --primary:#1769c2;--primary-color:#1769c2;--brand-primary:#1769c2;
+ --accent:#1769c2;--accent-color:#1769c2;--danger:#b42335;
+ --surface:#fff;--surface-muted:#f4f8fc;--line:#d8e5f3;
+}
+/* Legacy palette utilities used by older screens */
+.bg-red-50,.bg-red-100,.bg-red-200,.bg-rose-50,.bg-rose-100,.bg-pink-50,.bg-pink-100,
+[ class~="bg-[#fff1f2]" ],[ class~="bg-[#fff7f7]" ],[ class~="bg-[#fff8f8]" ]{background-color:#eaf4ff!important}
+.text-red-500,.text-red-600,.text-red-700,.text-red-800,.text-rose-500,.text-rose-600,.text-rose-700,.text-pink-600{color:#1769c2!important}
+.border-red-100,.border-red-200,.border-red-300,.border-rose-100,.border-rose-200,.border-pink-100{border-color:#c5def8!important}
+/* Old red/pink action buttons become primary blue; explicit destructive actions stay red. */
+button[class*="red" i]:not(.danger):not(.btn-danger):not([data-action="delete"]),
+button[class*="rose" i]:not(.danger):not(.btn-danger):not([data-action="delete"]),
+.btn-red:not(.danger):not(.btn-danger),.kw-user-tabs button.is-active{
+ background-color:#1769c2!important;border-color:#1769c2!important;color:#fff!important
+}
+/* Keep destructive / error semantics clearly red */
+button.danger,button.btn-danger,button[data-action="delete"],.text-danger,.error-text,.field-error,.validation-error{color:#b42335!important}
+/* Clear hierarchy for all common button variants across pages */
+button,.btn,.button{border-radius:10px;}
+button:not(:disabled):active,.btn:not(:disabled):active{transform:translateY(1px)}
+button.btn-secondary,.btn-secondary,button.secondary,.button-secondary{background:#fff!important;color:#24486c!important;border:1px solid #cbdced!important}
+button.btn-secondary:hover,.btn-secondary:hover,button.secondary:hover,.button-secondary:hover{background:#edf5fd!important}
+/* Tables, form labels and summaries share consistent contrast */
+label,.form-label,.field-label{color:#24415f;font-weight:650}
+small,.helper-text,.form-hint{color:#62758b}
+input::placeholder,textarea::placeholder{color:#8495a8;opacity:1}
+/* Avoid viewport overflow on long financial tables and forms */
+#root,.app-shell,.main-content,.page-container,.page-content{min-width:0;max-width:100%}
+img,canvas,svg{max-width:100%}
+@media(max-width:768px){
+ .page-container,.page-content,.main-content{padding-inline:12px!important}
+ .form-grid,.stats-grid,.dashboard-grid{grid-template-columns:minmax(0,1fr)!important}
+ .action-row,.toolbar,.page-actions{flex-wrap:wrap;gap:8px}
+ .action-row>* ,.toolbar>* ,.page-actions>*{max-width:100%}
+}
