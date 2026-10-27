@@ -1,0 +1,71 @@
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { api, clearSession, getStoredUser, getToken, setSession, setStoredBranches } from '../api.js';
+
+const AuthContext = createContext(null);
+
+export function AuthProvider({ children }) {
+  const [user, setUser] = useState(() => getStoredUser());
+  // A cached user can render the shell immediately while /auth/me verifies the token in background.
+  // API authorization remains server-side, so this improves perceived startup without weakening backend security.
+  const [loading, setLoading] = useState(() => Boolean(getToken()) && !getStoredUser());
+
+  const refreshMe = useCallback(async () => {
+    if (!getToken()) {
+      setLoading(false);
+      return null;
+    }
+    try {
+      const res = await api.me();
+      setUser(res.user);
+      setSession(getToken(), res.user);
+      return res.user;
+    } catch (err) {
+      // Only an explicit authentication rejection invalidates the saved login.
+      // A cold-starting Render service or offline MongoDB must not erase credentials.
+      if (err.status === 401 || err.status === 403) {
+        clearSession();
+        setUser(null);
+      } else {
+        // Keep the cached shell visible during a temporary Render/Mongo cold start.
+        // Every protected API request is still authorized by the backend token.
+        console.warn('[auth] Could not refresh session; keeping cached session for retry:', err.code || err.status);
+      }
+      return null;
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => { refreshMe(); }, [refreshMe]);
+
+  const login = useCallback(async (username, password) => {
+    const res = await api.login(username, password);
+    setSession(res.token, res.user);
+    if (Array.isArray(res.branches) && res.branches.length) setStoredBranches(res.branches);
+    setUser(res.user);
+    return res.user;
+  }, []);
+
+  const logout = useCallback(() => {
+    clearSession();
+    setUser(null);
+  }, []);
+
+  const value = useMemo(() => ({
+    user,
+    loading,
+    login,
+    logout,
+    refreshMe,
+    isOwner: user?.role === 'owner',
+    isEmployee: user?.role === 'employee',
+  }), [user, loading, login, logout, refreshMe]);
+
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+}
+
+export function useAuth() {
+  const ctx = useContext(AuthContext);
+  if (!ctx) throw new Error('useAuth must be used inside AuthProvider');
+  return ctx;
+}

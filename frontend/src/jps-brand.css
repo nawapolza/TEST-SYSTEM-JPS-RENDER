@@ -1,0 +1,33 @@
+/* JPS blue-white brand layer */
+:root{--heng-blue-800:#17366f;--heng-blue-700:#244a98;--heng-blue-50:#edf4ff;--rf-red:#244a98;--rf-red-dark:#17366f;--rf-pale:#edf4ff;--rf-ink:#172033;--jps-blue:#244a98;--jps-blue-dark:#17366f;--jps-pale:#edf4ff;}
+html,body{background:#f5f8ff!important;color:#172033!important;}
+:focus-visible{outline-color:#3b82f6!important;}
+.rf-header,.rf-topbar,.nova-topbar{background:#fff!important;}
+.rf-tab.is-active,.rf-mobile-dock button.is-active{background:#244a98!important;color:#fff!important;}
+.rf-wordmark strong,.rf-menu-title small,.rf-menu-title h2{color:#244a98!important;}
+.rf-system-indicator{color:#244a98!important;background:#edf4ff!important;border-color:#c9dcff!important;}
+.nova-rail{border-right-color:#dbe7fb!important;}
+.nova-brand{background:#edf4ff!important;border-color:#c9dcff!important;}
+.nova-brand-mark,.nova-brand-mark>span,.nova-brand-mark>span>span{background:#244a98!important;}
+.nova-brand-copy strong,.nova-system-pill,.nova-route-item:hover,.nova-route-copy strong{color:#17366f!important;}
+.nova-system-pill{background:#edf4ff!important;border-color:#c9dcff!important;}
+.nova-route-item:hover{background:#edf4ff!important;}
+.nova-route-item.is-active,.page-orbit,.hero-clean,.ledger-hero,.kw-finance-net{background:linear-gradient(115deg,#17366f 0%,#244a98 58%,#3977ce 100%)!important;border-color:#244a98!important;box-shadow:0 18px 28px #244a9818!important;}
+.nova-route-node,.nova-command-icon,.nova-account-avatar,.section-icon,.ledger-heading-icon,.nova-user-avatar{background:#edf4ff!important;color:#244a98!important;border-color:#c9dcff!important;}
+.card,.card-clean,.mobile-form-card,.section-card,.section-head,.ledger-panel,.app-form-card{border-color:#dce7f8!important;}
+.section-head{background:#f4f8ff!important;}
+.btn-primary,.submit-primary,.app-form-card .submit-primary,.kw-user-tabs button.is-active{background:#244a98!important;border-color:#244a98!important;color:#fff!important;box-shadow:0 8px 20px #244a9825!important;}
+.btn-primary:hover,.submit-primary:hover{background:#17366f!important;}
+.btn-soft,.kw-list-actions button,.kw-user-tabs button,.kw-modal-close{background:#edf4ff!important;color:#17366f!important;border-color:#c9dcff!important;}
+.input,.input-compact,input[type=date],input[type=month],input[type=time]{border-color:#cbd9ef!important;}
+.input:focus,.input-compact:focus{border-color:#3977ce!important;box-shadow:0 0 0 4px #dbeafe!important;}
+.kw-bill-detail strong,.kw-bill-detail h2,.kw-modal-header,.kw-finance-heading{color:#244a98!important;}
+.kw-finance-breakdown{background:#f4f8ff!important;border-color:#dce7f8!important;}
+.kw-finance-cell{border-color:#dce7f8!important;}
+.kw-finance-net{background:#244a98!important;}
+@media(max-width:640px){.rf-mobile-dock{border-top-color:#dbe7fb!important;}}
+
+/* Translate remaining legacy utility colors into the JPS blue palette. */
+:root .text-red-50,:root .text-red-100,:root .text-red-200,:root .text-red-300,:root .text-red-400,:root .text-red-500,:root .text-red-600,:root .text-red-700,:root .text-red-800,:root .text-red-900{color:#244a98!important}
+:root .bg-red-50,:root .bg-red-100{background-color:#edf4ff!important}
+:root .border-red-100,:root .border-red-200,:root .border-red-300{border-color:#c9dcff!important}
