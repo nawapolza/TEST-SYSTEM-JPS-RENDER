@@ -33,3 +33,6 @@ import './jps-final-theme.css';
 
 // Must be imported last: unified JPS blue/white theme overrides legacy page styles.
 import './jps-blue-white-100.css';
+
+// Final brand layer: force the JPS blue/white palette across legacy screens.
+import './jps-system-blue-final.css';

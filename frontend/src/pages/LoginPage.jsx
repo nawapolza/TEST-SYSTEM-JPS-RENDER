@@ -33,19 +33,19 @@ export default function LoginPage() {
             <div className="flex items-center gap-3">
               <BrandMark className="login-logo-card h-24 w-24 rounded-[2rem] text-base tracking-[0.32em]" />
               <div>
-                <p className="text-xs font-black uppercase tracking-[.22em] text-red-100">TEST SYSTEM — JPS</p>
+                <p className="text-xs font-black uppercase tracking-[.22em] text-blue-100">TEST SYSTEM — JPS</p>
                 <h1 className="mt-1 text-3xl font-black tracking-tight text-white">TEST SYSTEM — JPS</h1>
               </div>
             </div>
 
-            <h2 className="mt-12 max-w-lg text-4xl font-black leading-tight text-white lg:text-5xl">ระบบจัดการงานขนส่งและน้ำมัน โฉมใหม่สีแดง–ขาว จัดการง่าย และพร้อมใช้งาน</h2>
-            <p className="mt-5 max-w-xl text-base font-semibold leading-8 text-red-100/90">จัดการรายการน้ำมัน ใบสรุปงาน รถ คนขับ และรายงานแบบมืออาชีพในหน้าจอเดียว รองรับมือถือ แท็บเล็ต และคอมพิวเตอร์</p>
+            <h2 className="mt-12 max-w-lg text-4xl font-black leading-tight text-white lg:text-5xl">ระบบจัดการงานขนส่งและน้ำมัน โฉมใหม่สีฟ้า–ขาว ใช้งานง่าย</h2>
+            <p className="mt-5 max-w-xl text-base font-semibold leading-8 text-blue-100/90">จัดการรายการน้ำมัน ใบสรุปงาน รถ คนขับ และรายงานแบบมืออาชีพในหน้าจอเดียว รองรับมือถือ แท็บเล็ต และคอมพิวเตอร์</p>
           </div>
 
           <div className="grid gap-3 sm:grid-cols-3">
-            <StoryPoint icon={Sparkles} label="Modern UI" />
-            <StoryPoint icon={Leaf} label="Pastel Theme" />
-            <StoryPoint icon={ShieldCheck} label="Secure Access" />
+            <StoryPoint icon={Sparkles} label="ใช้งานง่าย" />
+            <StoryPoint icon={Leaf} label="JPS Blue & White" />
+            <StoryPoint icon={ShieldCheck} label="แยกสิทธิ์ชัดเจน" />
           </div>
         </section>
 
@@ -56,8 +56,8 @@ export default function LoginPage() {
                 <BrandMark className="h-28 w-28 rounded-[1.4rem] text-sm tracking-[0.28em]" />
               </div>
               <span className="heng-kicker">TEST SYSTEM — JPS สำหรับพนักงานและผู้ดูแล</span>
-              <h2 className="mt-3 text-3xl font-black tracking-tight text-stone-950">ยินดีต้อนรับเข้าสู่ระบบ</h2>
-              <p className="mt-2 text-sm font-semibold leading-6 text-stone-500">เข้าสู่ระบบเพื่อเริ่มบันทึก ตรวจสอบข้อมูล และออกใบสรุปรายการของ TEST SYSTEM — JPS</p>
+              <h2 className="mt-3 text-3xl font-black tracking-tight text-blue-950">ยินดีต้อนรับเข้าสู่ระบบ</h2>
+              <p className="mt-2 text-sm font-semibold leading-6 text-slate-500">เข้าสู่ระบบเพื่อเริ่มบันทึก ตรวจสอบข้อมูล และออกใบสรุปรายการของ TEST SYSTEM — JPS</p>
             </div>
 
             <form onSubmit={onSubmit} className="space-y-4">
@@ -115,7 +115,7 @@ export default function LoginPage() {
 function StoryPoint({ icon: Icon, label }) {
   return (
     <div className="rounded-2xl border border-white/10 bg-white/7 p-4 backdrop-blur">
-      <Icon size={20} className="text-red-100" />
+      <Icon size={20} className="text-blue-100" />
       <p className="mt-3 text-sm font-black text-white">{label}</p>
     </div>
   );

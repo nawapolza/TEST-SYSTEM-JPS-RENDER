@@ -13,7 +13,7 @@ const allowedOrigins = envValue('CORS_ALLOWED_ORIGINS', '')
 module.exports = {
   mongodb: {
     uri: envValue('MONGODB_URI', ''),
-    db: envValue('MONGODB_DB', 'test_system_db'),
+    db: envValue('MONGODB_DB', 'test_system_jps'),
   },
   jwtSecret: envValue('JWT_SECRET', 'CHANGE_THIS_SECRET_FOR_PRODUCTION_2026'),
   jwtExpireSeconds: Number(envValue('JWT_EXPIRE_SECONDS', String(60 * 60 * 24 * 7))),

@@ -72,14 +72,14 @@ export default function UsersPage() {
       <div className="page-orbit">
         <span className="page-orbit-code">09 / USER ACCESS</span>
         <div>
-          <h1 className="page-title">จัดการพนักงาน</h1>
+          <h1 className="page-title">จัดการผู้ใช้งาน</h1>
           <p className="page-subtitle">เพิ่ม แก้ไข และลบออกจากรายการใช้งาน โดยเก็บประวัติงานและเปิดคืนบัญชีได้</p>
         </div>
         <span className="page-orbit-signal">2 ROLES</span>
       </div>
 
       <button type="button" className="btn-primary kw-add-btn" onClick={() => {setEditing(null);setForm(blankForm());setEditorOpen(v=>!v);}}>{editorOpen ? 'ปิดฟอร์ม' : '+ เพิ่มพนักงาน'}</button>
-      <div className="kw-user-tabs" role="group" aria-label="สถานะบัญชีพนักงาน"><button type="button" className={!showInactive ? 'is-active' : ''} onClick={() => setShowInactive(false)}>พนักงานที่ใช้งาน ({users.filter(user => Number(user.is_active ?? 1) !== 0).length})</button><button type="button" className={showInactive ? 'is-active' : ''} onClick={() => setShowInactive(true)}>บัญชีที่ลบจากรายการ ({users.filter(user => Number(user.is_active ?? 1) === 0).length})</button></div>
+      <div className="kw-user-tabs" role="group" aria-label="สถานะบัญชีพนักงาน"><button type="button" className={!showInactive ? 'is-active' : ''} onClick={() => setShowInactive(false)}>บัญชี User ที่ใช้งาน ({users.filter(user => Number(user.is_active ?? 1) !== 0).length})</button><button type="button" className={showInactive ? 'is-active' : ''} onClick={() => setShowInactive(true)}>บัญชีที่ลบจากรายการ ({users.filter(user => Number(user.is_active ?? 1) === 0).length})</button></div>
       <CompactPager state={pager} label="ค้นหาชื่อ ชื่อผู้ใช้ หรือเบอร์โทร"/>
       <form onSubmit={submit} className={`card p-4 md:p-5 ${editorOpen ? "" : "kw-editor-hidden"}`}>
         <h2 className="mb-4 flex items-center gap-2 text-lg font-black"><UserPlus size={20} /> {editing ? 'แก้ไขผู้ใช้งาน' : 'เพิ่มผู้ใช้งาน'}</h2>
@@ -88,7 +88,7 @@ export default function UsersPage() {
           <Field required label="ชื่อผู้ใช้สำหรับเข้าสู่ระบบ" autoComplete="username" value={form.username} onChange={(v) => setForm({ ...form, username: v })} />
           <Field required={!editing} type="password" autoComplete="new-password" label={editing ? 'รหัสผ่านใหม่ (ไม่เปลี่ยนให้เว้นว่าง)' : 'รหัสผ่าน'} value={form.password} onChange={(v) => setForm({ ...form, password: v })} />
           <Field label="เบอร์โทร" value={form.phone} onChange={(v) => setForm({ ...form, phone: v })} />
-          <label className="block"><span className="label">ระดับสิทธิ์การใช้งาน</span><select className="input mt-1" value={form.role} onChange={(e) => setForm({ ...form, role: e.target.value })}><option value="employee">พนักงาน</option><option value="owner">เจ้าของกิจการ</option></select></label>
+          <label className="block"><span className="label">ระดับสิทธิ์การใช้งาน</span><select className="input mt-1" value={form.role} onChange={(e) => setForm({ ...form, role: e.target.value })}><option value="employee">User — ผู้ใช้งาน</option><option value="owner">Admin — ผู้ดูแลระบบ</option></select></label>
 
           {editing && <label className="block"><span className="label">สถานะบัญชี</span><select className="input mt-1" value={form.is_active} onChange={(e) => setForm({ ...form, is_active: Number(e.target.value) })}><option value={1}>ใช้งาน</option><option value={0}>ปิดใช้งาน</option></select></label>}
           <div className="flex gap-2 md:items-end">
@@ -99,7 +99,7 @@ export default function UsersPage() {
       </form>
 
       <div className="kw-list-card"><div className="kw-list-scroll"><table className="kw-list-table"><thead><tr><th>ชื่อ / ชื่อผู้ใช้</th><th>เบอร์โทร</th><th>สิทธิ์ / สถานะ</th><th>จัดการ</th></tr></thead><tbody>
-        {pager.visible.map(user => <tr key={user.id}><td><strong>{user.name || user.username}</strong><small>@{user.username}</small></td><td>{user.phone || '-'}</td><td>{user.role === 'owner' ? 'แอดมิน' : 'พนักงาน'}<small>{String(user.is_active) === '0' ? 'ปิดใช้งาน' : 'ใช้งาน'}</small></td><td><div className="kw-list-actions"><button type="button" onClick={()=>startEdit(user)}>แก้ไข</button>{String(user.is_active) === '0' ? <button type="button" onClick={()=>restore(user)}>เปิดใช้งาน</button> : <button type="button" className="kw-user-remove" onClick={()=>remove(user)}><Trash2 size={14}/> ลบพนักงาน</button>}</div></td></tr>)}
+        {pager.visible.map(user => <tr key={user.id}><td><strong>{user.name || user.username}</strong><small>@{user.username}</small></td><td>{user.phone || '-'}</td><td>{user.role === 'owner' ? 'Admin · ผู้ดูแลระบบ' : 'User · ผู้ใช้งาน'}<small>{String(user.is_active) === '0' ? 'ปิดใช้งาน' : 'ใช้งาน'}</small></td><td><div className="kw-list-actions"><button type="button" onClick={()=>startEdit(user)}>แก้ไข</button>{String(user.is_active) === '0' ? <button type="button" onClick={()=>restore(user)}>เปิดใช้งาน</button> : <button type="button" className="kw-user-remove" onClick={()=>remove(user)}><Trash2 size={14}/> ปิดบัญชี User</button>}</div></td></tr>)}
         {!pager.filtered.length && <tr><td colSpan={4}>ไม่พบรายการ</td></tr>}
       </tbody></table></div></div>
     </div>
