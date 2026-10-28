@@ -24,14 +24,14 @@ export default function AccountPage() {
     finally { setBusy(false); }
   }
   return <div className="page-shell"><section className="card-clean mx-auto w-full max-w-2xl overflow-hidden p-4 sm:p-7">
-    <div className="mb-6 flex min-w-0 items-center gap-3"><span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-violet-100 text-violet-700"><KeyRound size={22}/></span><div className="min-w-0"><h1 className="break-words text-xl font-black text-slate-900 sm:text-2xl">บัญชีและรหัสผ่าน</h1><p className="break-words text-sm text-slate-500">@{user?.username} · {user?.role === 'owner' ? 'ผู้ดูแลระบบ' : 'พนักงาน'}</p></div></div>
-    <div className="mb-5 flex items-start gap-2 rounded-2xl bg-violet-50 p-3 text-sm font-medium leading-6 text-violet-900"><ShieldCheck className="mt-1 shrink-0" size={17}/><span>คุณสามารถเปลี่ยนรหัสผ่านของบัญชีตนเองได้ โดยต้องยืนยันรหัสผ่านเดิม การเปลี่ยนแปลงจะออกจากระบบอัตโนมัติ แนะนำให้ใช้รหัสผ่านที่เดายาก</span></div>
+    <div className="mb-6 flex min-w-0 items-center gap-3"><span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-blue-100 text-blue-700"><KeyRound size={22}/></span><div className="min-w-0"><h1 className="break-words text-xl font-black text-slate-900 sm:text-2xl">บัญชีและรหัสผ่าน</h1><p className="break-words text-sm text-slate-500">@{user?.username} · {user?.role === 'owner' ? 'ผู้ดูแลระบบ' : 'พนักงาน'}</p></div></div>
+    <div className="mb-5 flex items-start gap-2 rounded-2xl bg-blue-50 p-3 text-sm font-medium leading-6 text-blue-900"><ShieldCheck className="mt-1 shrink-0" size={17}/><span>คุณสามารถเปลี่ยนรหัสผ่านของบัญชีตนเองได้ โดยต้องยืนยันรหัสผ่านเดิม การเปลี่ยนแปลงจะออกจากระบบอัตโนมัติ แนะนำให้ใช้รหัสผ่านที่เดายาก</span></div>
     <form onSubmit={save} className="grid min-w-0 gap-4">
       <label className="block min-w-0 text-sm font-bold">รหัสผ่านปัจจุบัน<input type="password" autoComplete="current-password" required className="input mt-1" value={data.current_password} onChange={e=>setData({...data,current_password:e.target.value})}/></label>
       <label className="block min-w-0 text-sm font-bold">รหัสผ่านใหม่<input type="password" autoComplete="new-password" required className="input mt-1" value={data.new_password} onChange={e=>setData({...data,new_password:e.target.value})}/></label>
       <label className="block min-w-0 text-sm font-bold">ยืนยันรหัสผ่านใหม่<input type="password" autoComplete="new-password" required className="input mt-1" value={data.confirm_password} onChange={e=>setData({...data,confirm_password:e.target.value})}/></label>
-      {error&&<p role="alert" className="break-words rounded-xl bg-rose-50 p-3 text-sm text-rose-700">{error}</p>}
-      {message&&<p role="status" className="break-words rounded-xl bg-emerald-50 p-3 text-sm text-emerald-700">{message}</p>}
+      {error&&<p role="alert" className="break-words rounded-xl bg-blue-50 p-3 text-sm text-blue-700">{error}</p>}
+      {message&&<p role="status" className="break-words rounded-xl bg-sky-50 p-3 text-sm text-sky-700">{message}</p>}
       <button type="submit" disabled={busy} className="btn-primary w-full">{busy?'กำลังบันทึก...':'เปลี่ยนรหัสผ่าน'}</button>
     </form>
   </section></div>;

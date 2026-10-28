@@ -156,7 +156,7 @@ export default function VehiclesPage() {
 function RateField({ label, value, onChange, required = false, hint = '' }) {
   return (
     <label className="block vehicle-rate-setting">
-      <span className="label">{label}{required && <span className="text-red-500"> *</span>}</span>
+      <span className="label">{label}{required && <span className="text-blue-500"> *</span>}</span>
       <div className="relative mt-1">
         <input
           required={required}
@@ -194,7 +194,7 @@ function LinkStatus({ active }) {
 function Field({ label, value, onChange, required = false, hint = '', type = 'text', step = undefined }) {
   return (
     <label className="block">
-      <span className="label">{label}{required && <span className="text-red-500"> *</span>}</span>
+      <span className="label">{label}{required && <span className="text-blue-500"> *</span>}</span>
       <input required={required} type={type} step={step} min={type === 'number' ? '0' : undefined} className="input mt-1" value={value || ''} onChange={(e) => onChange(e.target.value)} />
       {hint && <p className="hint mt-1">{hint}</p>}
     </label>

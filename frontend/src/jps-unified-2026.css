@@ -1,0 +1,23 @@
+/* JPS SINGLE SOURCE VISUAL SYSTEM — blue + white. Keep status/error red for safety. */
+:root{--brand-primary:#244a98;--brand-hover:#173978;--brand-mid:#3974c9;--brand-pale:#eaf3ff;--brand-surface:#fff;--brand-background:#f5f9ff;--brand-border:#ccdef3;--brand-ink:#172b4d;--brand-muted:#526d92;color-scheme:light}
+html,body,#root{width:100%;min-height:100%;min-width:0;max-width:100%;overflow-x:clip}
+body{background:#f5f9ff!important;color:#172b4d!important;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit}button,a,input,select,textarea{touch-action:manipulation}button{cursor:pointer;min-height:44px}button:disabled{cursor:not-allowed}
+:focus-visible{outline:3px solid #67aaf3!important;outline-offset:2px}
+.page-shell,.card,.section-card,.receipt-card,.modal-content,.swal2-popup{max-width:100%;min-width:0}
+button:not(.btn-danger):not([data-variant=danger]),.btn:not(.btn-danger){transition:background-color .16s,border-color .16s,transform .16s}
+.btn-primary,button[type=submit],.swal2-confirm{background-color:#244a98!important;border-color:#244a98!important;color:#fff!important}
+.btn-primary:hover,button[type=submit]:hover,.swal2-confirm:hover{background-color:#173978!important}
+input:not([type=checkbox]):not([type=radio]):not([type=range]),textarea,select{min-height:44px;border-color:#c7d9ee!important}
+.swal2-popup{background:#fff!important;border:1px solid #ccdef3!important;color:#172b4d!important}
+.swal2-title{color:#214995!important}.swal2-cancel{background:#eaf3ff!important;color:#214995!important}
+@media(max-width:767px){
+ body{font-size:15px}#root{padding-bottom:env(safe-area-inset-bottom)}
+ .page-shell,.page-content,.page-container{min-width:0!important;width:100%;padding-left:max(12px,env(safe-area-inset-left))!important;padding-right:max(12px,env(safe-area-inset-right))!important}
+ .grid,.flex>*{min-width:0} .field-grid{grid-template-columns:minmax(0,1fr)!important}
+ .table-wrap,.table-responsive,.overflow-x-auto{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+ .swal2-popup{width:calc(100vw - 24px)!important;max-height:calc(100dvh - 28px);overflow:auto}
+ input,select,textarea{font-size:16px!important}button,.btn{min-height:44px}
+ .receipt-preview,.receipt-card{width:100%;overflow-wrap:anywhere}
+}
+@media print{html,body,#root{background:#fff!important} .receipt-card{break-inside:avoid;box-shadow:none!important} .no-print,.sidebar,.mobile-nav{display:none!important}}

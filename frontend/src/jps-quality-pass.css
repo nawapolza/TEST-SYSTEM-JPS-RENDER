@@ -1,0 +1,44 @@
+/* JPS unified quality pass: shared tokens, accessible controls, responsive forms/tables */
+:root{
+ --jps-primary:#245bb8;--jps-primary-hover:#194995;--jps-navy:#143979;--jps-sky:#eaf3ff;
+ --jps-sky-2:#f5f9ff;--jps-white:#fff;--jps-border:#d7e5f7;--jps-text:#17345f;
+ --jps-muted:#627b9f;--jps-radius:16px;--jps-shadow:0 8px 28px rgba(25,73,139,.08);
+ color-scheme:light;
+}
+html{scrollbar-gutter:stable}body{color:var(--jps-text);background:var(--jps-sky-2)}
+#root{min-height:100dvh;overflow-wrap:anywhere}
+button,a,input,select,textarea,[role=button]{-webkit-tap-highlight-color:transparent}
+button,a{touch-action:manipulation}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[role=button]:focus-visible{outline:3px solid #83b7ff!important;outline-offset:2px!important}
+input,select,textarea{max-width:100%;min-width:0}
+button{transition:background-color .16s ease,border-color .16s ease,box-shadow .16s ease,transform .16s ease}
+button:active{transform:translateY(1px)}
+.neo-content .card,.neo-content .card-clean,.neo-content .section-card,.neo-content .mobile-form-card,.neo-content .receipt-card,.neo-content .dashboard-metric,.neo-content .dashboard-filter-panel{background:var(--jps-white);border-color:var(--jps-border);box-shadow:var(--jps-shadow)}
+.neo-content .btn-primary,.neo-content button.btn-primary,.neo-content button[type=submit]:not(.btn-soft){background:var(--jps-primary)!important;color:#fff!important;border-color:var(--jps-primary)!important}
+.neo-content .btn-primary:hover,.neo-content button.btn-primary:hover,.neo-content button[type=submit]:not(.btn-soft):hover{background:var(--jps-primary-hover)!important}
+.neo-content .btn-soft,.neo-content .btn-dark,.neo-content .btn-danger{background:var(--jps-sky)!important;color:var(--jps-primary)!important;border:1px solid var(--jps-border)!important}
+.neo-content input:not([type=checkbox]):not([type=radio]),.neo-content select,.neo-content textarea{min-height:44px;padding:10px 12px}
+.neo-content input[type=checkbox],.neo-content input[type=radio]{width:18px;height:18px;accent-color:var(--jps-primary)}
+.neo-content table{width:100%;max-width:100%}.neo-content th{font-weight:800}.neo-content td,.neo-content th{overflow-wrap:anywhere}
+/* Convert common legacy red/pink/green/purple utility fills to the JPS blue/white palette.
+   Semantic labels still retain their text/icon so status meaning is not lost. */
+.text-red-400,.text-red-500,.text-red-600,.text-red-700,.text-rose-500,.text-rose-600,.text-pink-500,.text-pink-600,.text-purple-500,.text-purple-600,.text-green-500,.text-green-600,.text-emerald-500,.text-emerald-600{color:#245bb8!important}
+.bg-red-50,.bg-red-100,.bg-rose-50,.bg-rose-100,.bg-pink-50,.bg-purple-50,.bg-green-50,.bg-green-100,.bg-emerald-50,.bg-emerald-100{background-color:#eaf3ff!important}
+.bg-red-500,.bg-red-600,.bg-rose-500,.bg-rose-600,.bg-pink-500,.bg-pink-600,.bg-purple-500,.bg-purple-600,.bg-green-500,.bg-green-600,.bg-emerald-500,.bg-emerald-600{background-color:#245bb8!important}
+.border-red-200,.border-red-300,.border-rose-200,.border-pink-200,.border-purple-200,.border-green-200,.border-emerald-200{border-color:#bdd7f7!important}
+/* Make destructive actions visually consistent as requested; retain clear text labels and confirmation prompts. */
+.neo-content .btn-danger,.neo-content button[aria-label*=delete i],.neo-content button[title*=ลบ]{background:#eaf3ff!important;color:#194995!important;border-color:#bdd7f7!important}
+@media(max-width:767px){
+ html,body,#root{width:100%;min-width:0;overflow-x:clip}
+ .neo-content{padding-left:12px;padding-right:12px}
+ .neo-content button,.neo-content .btn,.neo-content [role=button]{min-height:44px}
+ .neo-content .field-grid,.neo-content .form-grid,.neo-content .grid-cols-2,.neo-content .grid-cols-3{grid-template-columns:minmax(0,1fr)!important}
+ .neo-content .dashboard-metrics{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .neo-content table{font-size:13px}
+ .neo-content .table-scroll,.neo-content .dashboard-table-scroll,.neo-content [class*=table-scroll]{max-width:100%;overflow-x:auto;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch}
+ .swal2-popup{width:calc(100vw - 24px)!important;max-width:520px!important;padding:18px!important;border-radius:18px!important}
+ .swal2-actions{width:100%;gap:8px}.swal2-actions button{flex:1;min-height:44px}
+}
+@media(max-width:390px){.neo-content{padding-left:9px;padding-right:9px}.neo-content .dashboard-metrics{gap:8px!important}.neo-content .dashboard-metric{padding:12px!important}.neo-topbar{padding-inline:9px!important}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+@media print{body,#root,.neo-app,.neo-workspace,.neo-content{background:#fff!important;box-shadow:none!important}.neo-content{padding:0!important}}

@@ -262,7 +262,7 @@ function JobSummaryBlock({ job, index }) {
         </div>
         <div className="flex gap-2">
           <span className="rounded-full bg-blue-50 px-2.5 py-1 text-[11px] font-black text-blue-700">{number(job.distance_km, 2)} กม.</span>
-          <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-[11px] font-black text-emerald-700">{money(income)}</span>
+          <span className="rounded-full bg-sky-50 px-2.5 py-1 text-[11px] font-black text-sky-700">{money(income)}</span>
         </div>
       </div>
       <div className="divide-y divide-sky-100">
@@ -313,7 +313,7 @@ function CloseJobLine({ icon: Icon, prefix = '', label, value }) {
 
 function ReceiptIncomeLine({ label, value, total = false }) {
   return (
-    <div className={`flex items-center justify-between gap-3 rounded-2xl px-3 py-2.5 ${total ? 'bg-emerald-200/75 text-emerald-950' : 'bg-white/80 text-slate-800'}`}>
+    <div className={`flex items-center justify-between gap-3 rounded-2xl px-3 py-2.5 ${total ? 'bg-sky-200/75 text-sky-950' : 'bg-white/80 text-slate-800'}`}>
       <p className={`${total ? 'text-sm' : 'text-[13px]'} font-black`}>{label}</p>
       <p className={`${total ? 'text-base' : 'text-sm'} font-black`}>{number(value, 2)} บาท</p>
     </div>
@@ -324,8 +324,8 @@ function SummaryInfo({ label, value, tone = 'slate' }) {
   const cls = {
     slate: 'border-slate-100 bg-slate-50 text-slate-900',
     blue: 'border-blue-100 bg-blue-50 text-blue-950',
-    green: 'border-emerald-100 bg-emerald-50 text-emerald-950',
-    danger: 'border-rose-200 bg-rose-50 text-rose-950',
+    green: 'border-sky-100 bg-sky-50 text-sky-950',
+    danger: 'border-blue-200 bg-blue-50 text-blue-950',
     dark: 'border-slate-200 bg-slate-950 text-white',
   }[tone] || 'border-slate-100 bg-slate-50 text-slate-900';
   return (
@@ -373,7 +373,7 @@ function RouteStepBadge({ mode = 'origin', value }) {
   const isDestination = mode === 'destination';
   const label = isDestination ? 'ลงงาน' : 'ขึ้นงาน';
   const fallback = isDestination ? 'ไม่ระบุจุดลงงาน' : 'ไม่ระบุจุดขึ้นงาน';
-  const tone = isDestination ? 'bg-emerald-50 text-emerald-800 ring-emerald-100' : 'bg-blue-50 text-blue-800 ring-blue-100';
+  const tone = isDestination ? 'bg-sky-50 text-sky-800 ring-sky-100' : 'bg-blue-50 text-blue-800 ring-blue-100';
   const valueText = hasValue(value) ? value : fallback;
   return (
     <div className={`rounded-2xl px-3 py-2.5 ring-1 ${tone}`}>

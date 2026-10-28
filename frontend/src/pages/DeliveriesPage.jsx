@@ -73,7 +73,7 @@ export default function DeliveriesPage() {
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div>
               <h1 className="text-2xl font-black tracking-tight md:text-3xl">รายการงานน้ำมัน</h1>
-              <p className="mt-2 max-w-3xl text-sm font-semibold leading-6 text-red-100">ค้นหาใบสรุปย้อนหลังของสาขาที่เลือกแบบอ่านง่าย</p>
+              <p className="mt-2 max-w-3xl text-sm font-semibold leading-6 text-blue-100">ค้นหาใบสรุปย้อนหลังของสาขาที่เลือกแบบอ่านง่าย</p>
             </div>
             <div className="rounded-2xl bg-white/10 px-4 py-3 text-sm font-black backdrop-blur">
               ทั้งหมด {rows.length} รายการ · หน้า {page}/{totalPages}

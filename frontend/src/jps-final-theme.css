@@ -71,9 +71,9 @@ td,th{border-color:#e0eaf4!important}
 tbody tr:hover{background:#f5faff!important}
 .table-wrap,.table-responsive{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
 /* Legacy brand utilities become blue, while semantic statuses retain meaning */
-.bg-red-50,.bg-red-100,.bg-red-200,.bg-rose-50,.bg-rose-100,.bg-pink-50,.bg-pink-100{background:var(--jps-blue-50)!important}
-.border-red-100,.border-red-200,.border-red-300,.border-rose-100,.border-rose-200,.border-pink-100{border-color:var(--jps-blue-200)!important}
-.text-red-500:not(.error-text):not(.text-danger),.text-red-600:not(.error-text):not(.text-danger),.text-red-700:not(.error-text):not(.text-danger),.text-rose-500,.text-rose-600,.text-pink-600{color:var(--jps-blue-700)!important}
+.bg-red-50,.bg-red-100,.bg-red-200,.bg-blue-50,.bg-blue-100,.bg-sky-50,.bg-sky-100{background:var(--jps-blue-50)!important}
+.border-red-100,.border-red-200,.border-red-300,.border-blue-100,.border-blue-200,.border-sky-100{border-color:var(--jps-blue-200)!important}
+.text-red-500:not(.error-text):not(.text-danger),.text-red-600:not(.error-text):not(.text-danger),.text-red-700:not(.error-text):not(.text-danger),.text-blue-500,.text-blue-600,.text-sky-600{color:var(--jps-blue-700)!important}
 button[class*="red" i]:not(.danger):not(.btn-danger):not([data-action="delete"]):not(.delete-button),button[class*="rose" i]:not(.danger):not(.btn-danger):not([data-action="delete"]):not(.delete-button),.btn-red:not(.danger):not(.btn-danger){background:var(--jps-blue-700)!important;border-color:var(--jps-blue-700)!important;color:#fff!important}
 /* Preserve semantic danger, warning, and success states */
 .danger,.btn-danger,button.danger,button.btn-danger,[data-action="delete"],.delete-button,.text-danger,.error-text,.field-error,.validation-error{color:var(--jps-error)!important}

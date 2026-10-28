@@ -10,6 +10,7 @@ import './responsive-ton-layout.css';
 import './theme-finish.css';
 import './mobile-ledger-one-line.css';
 import './jps-professional-overrides.css';
+import './jps-unified-2026.css';
 
 function markDeviceMode() {
   try {
@@ -36,3 +37,8 @@ import './jps-blue-white-100.css';
 
 // Final brand layer: force the JPS blue/white palette across legacy screens.
 import './jps-system-blue-final.css';
+
+import './jps-neo-experience.css';
+
+// Last layer: shared accessibility, responsive and blue/white quality pass.
+import './jps-quality-pass.css';

@@ -377,7 +377,7 @@ export default function DeliveryForm({ initialData = null, onSaved = null }) {
 
   const draftKey = useMemo(() => {
     const deviceId = getDeviceId();
-    const userKey = user?.id || user?.username || 'shared-user';
+    const userKey = user?.id || user?.username || 'shablue-user';
     return `${DRAFT_VERSION}:${activeBranch?.id || 'branch'}:${deviceId}:${userKey}`;
   }, [activeBranch?.id, user?.id, user?.username]);
 
@@ -851,12 +851,12 @@ export default function DeliveryForm({ initialData = null, onSaved = null }) {
             </Section>
 
             <Section no="2" id="delivery-step-2" icon={Droplets} title="ระยะทาง ลิตรเติมจริง และราคา" subtitle="ระบบคำนวณลิตรมาตรฐานจากระยะทาง แล้วเปรียบเทียบกับลิตรเติมจริงเพื่อวิเคราะห์ค่าใช้จ่าย">
-              <div className="field-wide col-span-full rounded-[1.35rem] border border-violet-100 bg-violet-50/65 p-4 text-sm font-semibold text-violet-950">
+              <div className="field-wide col-span-full rounded-[1.35rem] border border-blue-100 bg-blue-50/65 p-4 text-sm font-semibold text-blue-950">
                 <div className="flex items-start gap-3">
-                  <ShieldCheck size={18} className="mt-0.5 text-violet-700" />
+                  <ShieldCheck size={18} className="mt-0.5 text-blue-700" />
                   <div>
                     <p className="font-black">บันทึกระยะทางจริง • ไม่ใช้ GPS</p>
-                    <p className="mt-1 text-xs font-semibold leading-6 text-violet-800/80">กรอกระยะทางจริงเอง ระบบรวมทุกงานและคำนวณลิตรมาตรฐานให้อัตโนมัติ</p>
+                    <p className="mt-1 text-xs font-semibold leading-6 text-blue-800/80">กรอกระยะทางจริงเอง ระบบรวมทุกงานและคำนวณลิตรมาตรฐานให้อัตโนมัติ</p>
                   </div>
                 </div>
               </div>
@@ -954,23 +954,23 @@ export default function DeliveryForm({ initialData = null, onSaved = null }) {
                         </div>
                         <label className="field-featured material-job-picker"><span>ประเภทสินค้า / ชื่องาน</span><select value={transportMaterials.some(m => m.name === job.cargo_name) ? job.cargo_name : (job.cargo_name ? '__legacy__' : '')} onChange={e => setJobField(index,'cargo_name', e.target.value)}><option value="">เลือกวัสดุ</option>{job.cargo_name && !transportMaterials.some(m => m.name === job.cargo_name) && <option value="__legacy__" disabled>{job.cargo_name} (รายการเดิม)</option>}{transportMaterials.map(m => <option key={m.id} value={m.name}>{m.name}</option>)}</select><small>รายการวัสดุเชื่อมกับหน้า Admin · วัสดุเดิมในเที่ยวงานย้อนหลังจะยังคงอยู่</small></label>
                         <Field className="field-featured" type="number" step="0.01" label="ระยะทางงานนี้" hint="ระบบจะรวมทุกงานอัตโนมัติ" value={job.distance_km} onChange={(v) => setJobField(index, 'distance_km', v)} suffix="กม." />
-                        <div className="kw-paired-inputs field-wide">
+                        <div className="kw-paiblue-inputs field-wide">
                           <SmartDateField label="วันที่บรรทุก" hint="ไม่บังคับ" value={job.load_date} onChange={(v) => setJobField(index, 'load_date', v)} optional />
                           <SmartDateField label="วันที่ลงของ" hint="ไม่บังคับ" value={job.unload_date} onChange={(v) => setJobField(index, 'unload_date', v)} optional />
                         </div>
                         <Field className="field-wide" label="จุดรับสินค้า / บ่อต้นทาง" hint="จุดขึ้นงาน" value={job.origin_place} onChange={(v) => setJobField(index, 'origin_place', v)} placeholder="เช่น บ่อทราย SMC" />
                         <Field className="field-wide" label="จุดลงงาน / ปลายทาง" hint="สถานที่ส่งสินค้า" value={job.destination_place} onChange={(v) => setJobField(index, 'destination_place', v)} placeholder="เช่น โออาร์ซี บางเสาธง" />
-                        <div className="kw-paired-inputs field-wide">
+                        <div className="kw-paiblue-inputs field-wide">
                           <TonField label="น้ำหนักต้นทาง" hint="น้ำหนักจากจุดรับสินค้า" kilograms={job.loading_weight_kg} onKilogramsChange={(v) => setJobField(index, 'loading_weight_kg', v)} />
                           <TonField label="น้ำหนักปลายทาง" hint="น้ำหนักจากจุดลงงาน" kilograms={job.unloading_weight_kg} onKilogramsChange={(v) => setJobField(index, 'unloading_weight_kg', v)} />
                         </div>
                         <Field type="number" step="0.01" label="น้ำหนักหิน (ข้อมูลเดิม)" hint="เว้นว่างได้" value={job.cargo_stone_weight} onChange={(v) => setJobField(index, 'cargo_stone_weight', v)} suffix="ตัน" />
                         <Field type="number" step="0.01" label="น้ำหนักไม้สับ (ข้อมูลเดิม)" hint="เว้นว่างได้" value={job.cargo_sand_weight} onChange={(v) => setJobField(index, 'cargo_sand_weight', v)} suffix="ตัน" />
 
-                        <div className="field-wide rounded-[1.4rem] border border-emerald-100 bg-emerald-50/70 p-3">
+                        <div className="field-wide rounded-[1.4rem] border border-sky-100 bg-sky-50/70 p-3">
                           <div className="mb-3 flex items-center gap-2">
-                            <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-emerald-600 text-white"><Banknote size={17} /></div>
-                            <div><p className="text-sm font-black text-emerald-950">รายได้งานที่ {index + 1}</p><p className="text-[11px] font-bold text-emerald-700">รวมอัตโนมัติ {money(jobIncome)}</p></div>
+                            <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-sky-600 text-white"><Banknote size={17} /></div>
+                            <div><p className="text-sm font-black text-sky-950">รายได้งานที่ {index + 1}</p><p className="text-[11px] font-bold text-sky-700">รวมอัตโนมัติ {money(jobIncome)}</p></div>
                           </div>
                           <div className="grid gap-3 md:grid-cols-2">
                             <Field type="number" step="0.01" label="ค่าทราย" value={job.other_income_baht} onChange={(v) => setJobField(index, 'other_income_baht', v)} suffix="บาท" />
@@ -1125,7 +1125,7 @@ function SmartDateField({ label, value, onChange, required = false, hint = '', o
   ];
   return (
     <label className={`form-field smart-date-field ${className}`.trim()}>
-      <span className="form-field-label label">{label}{required && <span className="text-red-500"> *</span>}</span>
+      <span className="form-field-label label">{label}{required && <span className="text-blue-500"> *</span>}</span>
       <div className="smart-date-box">
         <span className="smart-date-icon"><CalendarDays size={18} /></span>
         <input
@@ -1153,7 +1153,7 @@ function SmartDateField({ label, value, onChange, required = false, hint = '', o
 function SmartTimeField({ label, value, onChange, required = false, hint = '', className = '' }) {
   return (
     <label className={`form-field smart-date-field ${className}`.trim()}>
-      <span className="form-field-label label">{label}{required && <span className="text-red-500"> *</span>}</span>
+      <span className="form-field-label label">{label}{required && <span className="text-blue-500"> *</span>}</span>
       <div className="smart-date-box smart-time-box">
         <span className="smart-date-icon"><Clock3 size={18} /></span>
         <input
@@ -1199,7 +1199,7 @@ function Field({ label, value, onChange, type = 'text', placeholder = '', suffix
   const isNumber = type === 'number';
   return (
     <label className={`form-field ${className}`.trim()}>
-      <span className="form-field-label label">{label}{required && <span className="text-red-500"> *</span>}</span>
+      <span className="form-field-label label">{label}{required && <span className="text-blue-500"> *</span>}</span>
       <div className="form-field-input-wrap relative">
         <input
           required={required}
@@ -1247,7 +1247,7 @@ function Select({ label, value, onChange, options, hint = '', className = '' }) 
 }
 
 function CalcCard({ billTotal, standardBillTotal, fuelVarianceLiters, fuelVarianceBaht, fuelEfficiency, expectedFuelEfficiency, effectiveLiters, recommendedFuelLiters, effectiveDistance, estimatedDistance }) {
-  const varianceTone = fuelVarianceLiters > 0 ? 'text-red-700' : fuelVarianceLiters < 0 ? 'text-emerald-700' : 'text-blue-950';
+  const varianceTone = fuelVarianceLiters > 0 ? 'text-blue-700' : fuelVarianceLiters < 0 ? 'text-sky-700' : 'text-blue-950';
   return (
     <div className="col-span-2 rounded-3xl border border-blue-100 bg-gradient-to-br from-blue-50 to-sky-50 p-4 text-sm font-bold text-blue-950 md:col-span-2 xl:col-span-4">
       <div className="flex items-start gap-3">
@@ -1464,7 +1464,7 @@ function SelectedFilePreview({ file, index, onRemove }) {
       <button
         type="button"
         onClick={onRemove}
-        className="absolute right-1.5 top-1.5 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-black/60 text-white shadow-sm transition group-hover:bg-red-600"
+        className="absolute right-1.5 top-1.5 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-black/60 text-white shadow-sm transition group-hover:bg-blue-600"
         aria-label={`ลบ ${title}`}
       >
         <X size={14} />

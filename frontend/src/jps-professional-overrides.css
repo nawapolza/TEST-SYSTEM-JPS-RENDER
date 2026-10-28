@@ -59,10 +59,10 @@ button.danger,button.btn-danger,.text-danger,.error-text{color:var(--jps-danger)
  --surface:#fff;--surface-muted:#f4f8fc;--line:#d8e5f3;
 }
 /* Legacy palette utilities used by older screens */
-.bg-red-50,.bg-red-100,.bg-red-200,.bg-rose-50,.bg-rose-100,.bg-pink-50,.bg-pink-100,
+.bg-red-50,.bg-red-100,.bg-red-200,.bg-blue-50,.bg-blue-100,.bg-sky-50,.bg-sky-100,
 [ class~="bg-[#fff1f2]" ],[ class~="bg-[#fff7f7]" ],[ class~="bg-[#fff8f8]" ]{background-color:#eaf4ff!important}
-.text-red-500,.text-red-600,.text-red-700,.text-red-800,.text-rose-500,.text-rose-600,.text-rose-700,.text-pink-600{color:#1769c2!important}
-.border-red-100,.border-red-200,.border-red-300,.border-rose-100,.border-rose-200,.border-pink-100{border-color:#c5def8!important}
+.text-red-500,.text-red-600,.text-red-700,.text-red-800,.text-blue-500,.text-blue-600,.text-blue-700,.text-sky-600{color:#1769c2!important}
+.border-red-100,.border-red-200,.border-red-300,.border-blue-100,.border-blue-200,.border-sky-100{border-color:#c5def8!important}
 /* Old red/pink action buttons become primary blue; explicit destructive actions stay red. */
 button[class*="red" i]:not(.danger):not(.btn-danger):not([data-action="delete"]),
 button[class*="rose" i]:not(.danger):not(.btn-danger):not([data-action="delete"]),

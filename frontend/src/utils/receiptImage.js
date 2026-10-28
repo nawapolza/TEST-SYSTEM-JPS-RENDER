@@ -272,7 +272,7 @@ function drawInfoCard(ctx, x, y, width, height, label, value, tone = 'blue') {
   const tones = {
     blue: ['#eff6ff', '#bfdbfe', '#1e3a8a', '#3b82f6'],
     slate: ['#f8fafc', '#e2e8f0', '#0f172a', '#64748b'],
-    green: ['#ecfdf5', '#a7f3d0', '#064e3b', '#10b981'],
+    green: ['#f5f9ff', '#d6e5fb', '#064e3b', '#3974c9'],
     danger: ['#fff1f2', '#fecdd3', '#881337', '#e11d48'],
   };
   const [background, border, valueColor, labelColor] = tones[tone] || tones.blue;

@@ -292,17 +292,17 @@ export default function CaptureReceiptModal({ row, onClose }) {
       <div className="capture-modal-panel flex max-h-[96vh] max-h-[96dvh] w-full max-w-[620px] flex-col overflow-hidden rounded-[2rem] bg-slate-100 p-2 shadow-2xl sm:p-4">
         <div className="mb-2 flex shrink-0 items-center justify-between gap-2 px-1 print:hidden">
           <div className="flex min-w-0 items-center gap-2 text-slate-700">
-            <CheckCircle2 className="shrink-0 text-emerald-400" size={22} />
+            <CheckCircle2 className="shrink-0 text-sky-400" size={22} />
             <div className="min-w-0">
               <p className="truncate text-sm font-black">บันทึกสำเร็จ — เปิดสรุปปิดงานแล้ว</p>
               <p className="truncate text-[11px] font-bold text-slate-500">หน้าแรกย่อให้แคปเห็นข้อมูลหลักครบ</p>
             </div>
           </div>
           <div className="flex shrink-0 items-center gap-2">
-            <button type="button" onClick={openCapturePreview} disabled={preparingImage} className="hidden items-center gap-1.5 rounded-2xl bg-white px-3 py-2 text-xs font-black text-red-700 shadow-lg ring-1 ring-blue-100 sm:inline-flex">
+            <button type="button" onClick={openCapturePreview} disabled={preparingImage} className="hidden items-center gap-1.5 rounded-2xl bg-white px-3 py-2 text-xs font-black text-blue-700 shadow-lg ring-1 ring-blue-100 sm:inline-flex">
               <Camera size={16} /> {preparingImage ? 'กำลังสร้าง...' : 'แคปหน้าเดียว'}
             </button>
-            <button type="button" onClick={saveReceiptImage} disabled={savingImage || preparingImage} className="hidden items-center gap-1.5 rounded-2xl bg-red-600 px-3 py-2 text-xs font-black text-white shadow-lg shadow-red-600/20 sm:inline-flex">
+            <button type="button" onClick={saveReceiptImage} disabled={savingImage || preparingImage} className="hidden items-center gap-1.5 rounded-2xl bg-blue-600 px-3 py-2 text-xs font-black text-white shadow-lg shadow-blue-600/20 sm:inline-flex">
               <Download size={16} /> {savingImage ? 'กำลังบันทึก...' : 'แชร์/บันทึกรูป'}
             </button>
             <button type="button" onClick={onClose} className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white text-slate-700 shadow-lg" aria-label="ปิดใบสรุป">
@@ -313,17 +313,17 @@ export default function CaptureReceiptModal({ row, onClose }) {
 
         <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain rounded-[1.6rem]">
           <article className="capture-receipt overflow-hidden rounded-[1.6rem] border border-blue-100 bg-white shadow-[0_18px_50px_rgba(15,23,42,.16)]">
-            <header className="bg-gradient-to-br from-white via-red-50 to-rose-100 p-3 sm:p-4">
+            <header className="bg-gradient-to-br from-white via-blue-50 to-blue-100 p-3 sm:p-4">
               <div className="flex items-start gap-3">
-                <div className="h-12 w-12 shrink-0 overflow-hidden rounded-2xl bg-white p-1 shadow-lg ring-1 ring-violet-100 sm:h-14 sm:w-14">
+                <div className="h-12 w-12 shrink-0 overflow-hidden rounded-2xl bg-white p-1 shadow-lg ring-1 ring-blue-100 sm:h-14 sm:w-14">
                   <BrandMark compact className="h-full w-full rounded-[1rem] text-[11px] tracking-[0.28em]" />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="text-[10px] font-black uppercase tracking-[.18em] text-violet-700">TEST SYSTEM — JPS</p>
+                  <p className="text-[10px] font-black uppercase tracking-[.18em] text-blue-700">TEST SYSTEM — JPS</p>
                   <h2 className="mt-0.5 text-xl font-black leading-tight text-slate-950 sm:text-2xl">ใบสรุปรายการ</h2>
                   <p className="mt-0.5 text-[11px] font-bold text-slate-500">ขึ้นงาน ลงงาน น้ำหนัก รายได้ และข้อมูลน้ำมันในรูปแบบใหม่</p>
                 </div>
-                <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-[10px] font-black text-emerald-700 ring-1 ring-emerald-100">บันทึกแล้ว</span>
+                <span className="rounded-full bg-sky-50 px-2.5 py-1 text-[10px] font-black text-sky-700 ring-1 ring-sky-100">บันทึกแล้ว</span>
               </div>
 
               <div className="mt-3 flex flex-wrap items-center gap-2">
@@ -393,7 +393,7 @@ export default function CaptureReceiptModal({ row, onClose }) {
                 </summary>
                 <div className="space-y-2.5 border-t border-slate-100 p-2.5">
                   <div className="flex items-center gap-2 px-1">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-red-600 text-white"><Route size={16} /></div>
+                    <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-blue-600 text-white"><Route size={16} /></div>
                     <div>
                       <p className="text-xs font-black text-slate-900 sm:text-sm">รายละเอียดน้ำมัน</p>
                       <p className="text-[10px] font-bold text-slate-400">ข้อมูลการใช้น้ำมัน</p>
@@ -444,7 +444,7 @@ export default function CaptureReceiptModal({ row, onClose }) {
               <p className="truncate text-[11px] font-bold text-slate-500">iPhone: แตะค้างบนรูป → บันทึกรูปภาพ</p>
             </div>
             <div className="flex shrink-0 gap-2">
-              <button type="button" onClick={openImageInNewTab} className="rounded-xl bg-blue-50 px-3 py-2 text-xs font-black text-red-700">เต็มจอ</button>
+              <button type="button" onClick={openImageInNewTab} className="rounded-xl bg-blue-50 px-3 py-2 text-xs font-black text-blue-700">เต็มจอ</button>
               <button type="button" onClick={() => setShowImagePreview(false)} className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-700"><X size={18} /></button>
             </div>
           </div>
@@ -464,7 +464,7 @@ export default function CaptureReceiptModal({ row, onClose }) {
 function TimelineRow({ title, subtitle = '', meta = '', active = false }) {
   return (
     <div className="relative flex items-start gap-3 pb-4 last:pb-0 sm:gap-4 sm:pb-5">
-      <div className={`relative z-10 mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-4 border-white shadow-sm sm:h-9 sm:w-9 ${active ? 'bg-red-600' : 'bg-slate-500'}`}>
+      <div className={`relative z-10 mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-4 border-white shadow-sm sm:h-9 sm:w-9 ${active ? 'bg-blue-600' : 'bg-slate-500'}`}>
         {active ? <CheckCircle2 size={13} className="text-white" /> : <span className="block h-3 w-3 rounded-full bg-white" />}
       </div>
       <div className="min-w-0 flex-1 pt-0.5">
@@ -502,7 +502,7 @@ function SummaryBlueRow({ label, value }) {
 
 function SummaryTotalRow({ label, value }) {
   return (
-    <div className="mt-1.5 flex items-center justify-between gap-3 rounded-xl bg-emerald-200/75 px-2.5 py-1.5 text-emerald-950">
+    <div className="mt-1.5 flex items-center justify-between gap-3 rounded-xl bg-sky-200/75 px-2.5 py-1.5 text-sky-950">
       <p className="text-[11px] font-black sm:text-[13px]">{label}</p>
       <p className="text-xs font-black sm:text-[15px]">{value}</p>
     </div>
@@ -521,8 +521,8 @@ function CompactMetric({ label, value }) {
 function CaptureBox({ label, value, tone = 'slate' }) {
   const classes = {
     blue: 'border-blue-100 bg-blue-50 text-blue-950',
-    green: 'border-emerald-100 bg-emerald-50 text-emerald-950',
-    red: 'border-rose-200 bg-rose-50 text-rose-950',
+    green: 'border-sky-100 bg-sky-50 text-sky-950',
+    red: 'border-blue-200 bg-blue-50 text-blue-950',
     slate: 'border-slate-100 bg-slate-50 text-slate-950',
   }[tone] || 'border-slate-100 bg-slate-50 text-slate-950';
   return (
@@ -549,7 +549,7 @@ function CaptureThumb({ path, index }) {
   const href = uploadUrl(path);
   if (isPdf(path)) {
     return (
-      <a href={href} target="_blank" rel="noreferrer" className="flex aspect-square items-center justify-center rounded-xl bg-blue-50 text-red-700 ring-1 ring-blue-100">
+      <a href={href} target="_blank" rel="noreferrer" className="flex aspect-square items-center justify-center rounded-xl bg-blue-50 text-blue-700 ring-1 ring-blue-100">
         <FileText size={20} />
       </a>
     );

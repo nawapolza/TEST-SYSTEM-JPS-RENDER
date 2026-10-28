@@ -116,7 +116,7 @@ export default function FuelCalculatorPage() {
       </div>
 
       <BranchScopeBar label="ข้อมูลคำนวณของสาขา" detail="เลือกทะเบียนรถ กรอกระยะทางจริงและคำนวณค่าน้ำมันโดยไม่ใช้ GPS" />
-      <div className="red-manual-note">ระบุระยะทางที่วิ่งเองด้านล่าง ระบบจะคำนวณน้ำมันและค่าใช้จ่ายให้ทันที ไม่ใช้ข้อมูล GPS</div>
+      <div className="blue-manual-note">ระบุระยะทางที่วิ่งเองด้านล่าง ระบบจะคำนวณน้ำมันและค่าใช้จ่ายให้ทันที ไม่ใช้ข้อมูล GPS</div>
       <section className="calculator-layout">
         <div className="card-clean calculator-input-card">
           <div className="calculator-card-head">

@@ -42,8 +42,8 @@ export default function NotificationsPage() {
       <BranchScopeBar label="ศูนย์แจ้งเตือนของสาขา" detail="แจ้งเตือนสต๊อกต่ำและรายการผิดปกติถูกแยกตามสาขา" />
       <div className="grid gap-3 md:grid-cols-3">
         <div className="card p-5"><p className="text-sm font-black text-slate-500">แจ้งเตือนทั้งหมด</p><p className="mt-2 text-4xl font-black text-slate-950">{rows.length}</p></div>
-        <div className="card p-5"><p className="text-sm font-black text-slate-500">ยังไม่อ่าน</p><p className="mt-2 text-4xl font-black text-red-600">{unread}</p></div>
-        <div className="card p-5"><p className="text-sm font-black text-slate-500">สถานะข้อมูล</p><p className="mt-2 text-lg font-black text-red-700">เปิดใช้งาน</p></div>
+        <div className="card p-5"><p className="text-sm font-black text-slate-500">ยังไม่อ่าน</p><p className="mt-2 text-4xl font-black text-blue-600">{unread}</p></div>
+        <div className="card p-5"><p className="text-sm font-black text-slate-500">สถานะข้อมูล</p><p className="mt-2 text-lg font-black text-blue-700">เปิดใช้งาน</p></div>
       </div>
       <div className="grid gap-3">
         {rows.map((row) => (
@@ -68,7 +68,7 @@ export default function NotificationsPage() {
 }
 
 function badgeColor(type) {
-  if (type === 'danger') return 'rounded-3xl bg-red-50 p-3 text-red-600';
+  if (type === 'danger') return 'rounded-3xl bg-blue-50 p-3 text-blue-600';
   if (type === 'warning') return 'rounded-3xl bg-sky-50 p-3 text-sky-600';
   return 'rounded-3xl bg-blue-50 p-3 text-blue-600';
 }
