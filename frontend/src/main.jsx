@@ -42,3 +42,4 @@ import './jps-neo-experience.css';
 
 // Last layer: shared accessibility, responsive and blue/white quality pass.
 import './jps-quality-pass.css';
+import './jps-blue-white-complete.css'; // final unified blue/white system-wide theme

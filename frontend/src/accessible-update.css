@@ -5,7 +5,7 @@ button, input, select, textarea {touch-action:manipulation}
 button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {outline:3px solid #bd4138!important;outline-offset:2px}
 .kd-home-logo-frame {background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;padding:0!important; width:min(59vw,215px)!important;height:auto!important;aspect-ratio:1!important;margin:.2rem auto!important}
 .kd-home-logo-frame img {object-fit:contain!important;filter:none!important}
-.kd-splash-simple {background:linear-gradient(180deg,#fffafa,#fff)!important}
+.kd-splash-simple {background:linear-gradient(180deg,#f7faff,#fff)!important}
 .kd-splash-simple .kd-splash-inner {padding:1.5rem!important; gap:.9rem!important}
 .kd-splash-simple .kd-splash-logo {display:block;max-width:min(72vw,228px);height:auto;aspect-ratio:1;object-fit:contain;filter:none!important;animation:none!important}
 .kd-splash-simple h1 {font-size:clamp(1.25rem,5vw,1.8rem);line-height:1.5}
