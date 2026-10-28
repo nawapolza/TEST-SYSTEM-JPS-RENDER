@@ -375,3 +375,112 @@ body{font-feature-settings:'liga' 1,'kern' 1}
 
 /* ensure text remains visible in disabled legacy menu items */
 .neo-sidebar [disabled], .neo-sidebar .is-disabled{opacity:.72!important;color:#dbe9ff!important}
+
+/* Critical contrast repair: drawer/sidebar must never inherit pale text on white. */
+.neo-sidebar,
+.neo-drawer {
+  background: #ffffff !important;
+  color: #17365f !important;
+  border-right: 1px solid #d6e5fa !important;
+  box-shadow: 12px 0 34px rgba(24, 67, 128, .10) !important;
+}
+.neo-sidebar .neo-brand,
+.neo-drawer .neo-brand {
+  background: linear-gradient(135deg, #164a9a 0%, #2769c9 65%, #4389ed 100%) !important;
+  border-bottom: 1px solid #2c69bb !important;
+  color: #ffffff !important;
+}
+.neo-sidebar .neo-brand strong,
+.neo-drawer .neo-brand strong { color: #ffffff !important; }
+.neo-sidebar .neo-brand em,
+.neo-drawer .neo-brand em,
+.neo-sidebar .neo-brand span,
+.neo-drawer .neo-brand span { color: #d9eaff !important; opacity: 1 !important; }
+.neo-sidebar .neo-brand img,
+.neo-drawer .neo-brand img {
+  background: #ffffff !important;
+  border: 2px solid rgba(255,255,255,.7) !important;
+}
+.neo-sidebar .neo-nav-caption,
+.neo-drawer .neo-nav-caption {
+  color: #54739b !important;
+  opacity: 1 !important;
+  font-weight: 800 !important;
+}
+.neo-sidebar .neo-nav-button,
+.neo-drawer .neo-nav-button {
+  color: #28496f !important;
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+.neo-sidebar .neo-nav-button > svg,
+.neo-drawer .neo-nav-button > svg { color: #4776b4 !important; opacity: 1 !important; }
+.neo-sidebar .neo-nav-button span,
+.neo-drawer .neo-nav-button span { color: #28496f !important; opacity: 1 !important; }
+.neo-sidebar .neo-nav-button:hover,
+.neo-drawer .neo-nav-button:hover {
+  background: #f0f6ff !important;
+  border-color: #d6e6fc !important;
+  color: #174b9a !important;
+}
+.neo-sidebar .neo-nav-button.neo-active,
+.neo-drawer .neo-nav-button.neo-active {
+  background: #e7f1ff !important;
+  border-color: #c5dcfb !important;
+  color: #12458f !important;
+  box-shadow: inset 4px 0 0 #2869c7 !important;
+}
+.neo-sidebar .neo-nav-button.neo-active > svg,
+.neo-drawer .neo-nav-button.neo-active > svg,
+.neo-sidebar .neo-nav-button.neo-active span,
+.neo-drawer .neo-nav-button.neo-active span { color: #12458f !important; }
+.neo-sidebar .neo-nav-arrow,
+.neo-drawer .neo-nav-arrow { color: #2869c7 !important; }
+.neo-sidebar .neo-sidebar-foot,
+.neo-drawer .neo-sidebar-foot {
+  background: #f7faff !important;
+  border-top: 1px solid #dce8f8 !important;
+  color: #17365f !important;
+}
+.neo-sidebar .neo-user-meta strong,
+.neo-drawer .neo-user-meta strong { color: #17365f !important; }
+.neo-sidebar .neo-user-meta span,
+.neo-drawer .neo-user-meta span { color: #607b9f !important; opacity: 1 !important; }
+.neo-sidebar .neo-sidebar-foot button,
+.neo-drawer .neo-sidebar-foot button {
+  background: #eaf3ff !important;
+  border: 1px solid #d0e2fb !important;
+  color: #1e5cb5 !important;
+}
+.neo-drawer .neo-drawer-close {
+  background: #ffffff !important;
+  border: 1px solid #cfe0f8 !important;
+  color: #174b98 !important;
+  box-shadow: 0 3px 10px rgba(20,62,134,.12) !important;
+}
+.neo-drawer .neo-nav-scroll { background: #ffffff !important; }
+.neo-drawer-overlay { background: rgba(14, 43, 87, .38) !important; }
+
+/* Do not let inherited disabled/legacy opacity make menu text disappear. */
+.neo-sidebar *, .neo-drawer * { text-shadow: none; }
+.neo-sidebar .neo-nav-button:disabled,
+.neo-drawer .neo-nav-button:disabled,
+.neo-sidebar .neo-nav-button.is-disabled,
+.neo-drawer .neo-nav-button.is-disabled {
+  opacity: .78 !important;
+  color: #657f9f !important;
+}
+.neo-sidebar .neo-nav-button:disabled span,
+.neo-drawer .neo-nav-button:disabled span { color: #657f9f !important; }
+
+@media (max-width: 767px) {
+  .neo-drawer { width: min(320px, 86vw) !important; }
+  .neo-drawer .neo-brand { min-height: 100px !important; padding: 16px !important; }
+  .neo-drawer .neo-nav-scroll { padding: 14px 12px 18px !important; }
+  .neo-drawer .neo-nav-section + .neo-nav-section { margin-top: 14px !important; }
+  .neo-drawer .neo-nav-button { min-height: 44px !important; margin: 2px 0 !important; border-radius: 11px !important; font-size: 13px !important; }
+  .neo-drawer .neo-sidebar-foot { padding: 12px !important; }
+}
