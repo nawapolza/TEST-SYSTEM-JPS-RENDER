@@ -1,24 +1,26 @@
-import { useEffect, useMemo, useState } from 'react';
+import { Suspense, lazy, useEffect, useMemo, useState } from 'react';
 import Layout from './components/Layout.jsx';
 import Loading from './components/Loading.jsx';
 import { AuthProvider, useAuth } from './contexts/AuthContext.jsx';
 import { BranchProvider, useBranch } from './contexts/BranchContext.jsx';
-import BranchesPage from './pages/BranchesPage.jsx';
-import DashboardPage from './pages/DashboardPage.jsx';
-import FuelCalculatorPage from './pages/FuelCalculatorPage.jsx';
-import DeliveriesPage from './pages/DeliveriesPage.jsx';
-import EmployeeQuickPage from './pages/EmployeeQuickPage.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import AdminRecoveryPage from './pages/AdminRecoveryPage.jsx';
-import AccountPage from './pages/AccountPage.jsx';
-import NotificationsPage from './pages/NotificationsPage.jsx';
-import MonthlyReportsPage from './pages/MonthlyReportsPage.jsx';
-import UsersPage from './pages/UsersPage.jsx';
-import VehiclesPage from './pages/VehiclesPage.jsx';
-import TransportLedgerPage from './pages/TransportLedgerPage.jsx';
-import TripFinancePage from './pages/TripFinancePage.jsx';
-import MaterialsPage from './pages/MaterialsPage.jsx';
-import BillingPage from './pages/BillingPage.jsx';
+
+const BranchesPage = lazy(() => import('./pages/BranchesPage.jsx'));
+const DashboardPage = lazy(() => import('./pages/DashboardPage.jsx'));
+const FuelCalculatorPage = lazy(() => import('./pages/FuelCalculatorPage.jsx'));
+const DeliveriesPage = lazy(() => import('./pages/DeliveriesPage.jsx'));
+const EmployeeQuickPage = lazy(() => import('./pages/EmployeeQuickPage.jsx'));
+const AccountPage = lazy(() => import('./pages/AccountPage.jsx'));
+const NotificationsPage = lazy(() => import('./pages/NotificationsPage.jsx'));
+const MonthlyReportsPage = lazy(() => import('./pages/MonthlyReportsPage.jsx'));
+const UsersPage = lazy(() => import('./pages/UsersPage.jsx'));
+const VehiclesPage = lazy(() => import('./pages/VehiclesPage.jsx'));
+const TransportLedgerPage = lazy(() => import('./pages/TransportLedgerPage.jsx'));
+const TripFinancePage = lazy(() => import('./pages/TripFinancePage.jsx'));
+const MaterialsPage = lazy(() => import('./pages/MaterialsPage.jsx'));
+const BillingPage = lazy(() => import('./pages/BillingPage.jsx'));
+
 
 export default function App() {
   return (
@@ -83,7 +85,9 @@ function AppShell() {
   const safePage = pages[page] ? page : (isOwner ? 'dashboard' : 'quick');
   return (
     <Layout page={safePage} setPage={setPage}>
-      {pages[safePage]}
+      <Suspense fallback={<Loading text="กำลังเปิดหน้าระบบ..." />}>
+        {pages[safePage]}
+      </Suspense>
     </Layout>
   );
 }

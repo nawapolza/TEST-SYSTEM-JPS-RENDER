@@ -1,0 +1,377 @@
+/* JPS UX Hotfix 2026
+   Final import layer: high contrast, blue/white palette only, no red legacy blocks,
+   cleaner desktop + mobile layout, better readability. */
+
+:root{
+  --jps-bg:#eff5ff;
+  --jps-surface:#ffffff;
+  --jps-surface-2:#f7fbff;
+  --jps-surface-3:#eaf3ff;
+  --jps-primary:#1f5fc4;
+  --jps-primary-2:#3b82f6;
+  --jps-primary-deep:#143e86;
+  --jps-accent:#d7e8ff;
+  --jps-border:#c9ddfb;
+  --jps-border-strong:#aecaef;
+  --jps-text:#12345d;
+  --jps-text-2:#31557f;
+  --jps-text-soft:#6a86a8;
+  --jps-shadow-soft:0 12px 36px rgba(20,62,134,.08);
+  --jps-shadow-card:0 10px 26px rgba(31,95,196,.08);
+}
+
+html,body,#root{background:var(--jps-bg)!important;color:var(--jps-text)!important}
+body{font-feature-settings:'liga' 1,'kern' 1}
+
+/* ---------- generic cards / headings ---------- */
+.neo-content .card,
+.neo-content .card-clean,
+.neo-content .section-card,
+.neo-content .mobile-form-card,
+.neo-content .receipt-card,
+.neo-content .dashboard-metric,
+.neo-content .dashboard-filter-panel,
+.neo-content .dashboard-welcome,
+.neo-content .dashboard-table-card,
+.neo-content .dashboard-summary,
+.neo-content .dashboard-chart-card,
+.neo-content .dashboard-list-card,
+.neo-content .dw-panel,
+.neo-content .tf-panel,
+.neo-content .billing-panel,
+.neo-content .billing-section,
+.neo-content .ledger-panel{
+  background:var(--jps-surface)!important;
+  border:1px solid var(--jps-border)!important;
+  box-shadow:var(--jps-shadow-soft)!important;
+}
+
+.neo-content .section-head,
+.neo-content .dashboard-filter-panel,
+.neo-content .dw-hero,
+.neo-content .billing-hero,
+.neo-content .tf-hero{
+  background:linear-gradient(180deg,#ffffff 0%,#f6faff 100%)!important;
+}
+
+.neo-content h1,.neo-content h2,.neo-content h3,.neo-content h4,
+.neo-content .page-title,
+.neo-content .section-title,
+.neo-content .dashboard-title{
+  color:var(--jps-primary-deep)!important;
+}
+.neo-content p,.neo-content small,.neo-content .muted,
+.neo-content .dashboard-subtitle,
+.neo-content .helper-text{color:var(--jps-text-2)!important}
+
+/* ---------- top shell ---------- */
+.neo-app{background:linear-gradient(180deg,#f3f8ff,#eef5ff)!important}
+.neo-sidebar{
+  background:linear-gradient(180deg,#163e85 0%,#184892 58%,#12376f 100%)!important;
+}
+.neo-brand{border-bottom:1px solid rgba(255,255,255,.15)!important}
+.neo-brand strong{color:#fff!important}
+.neo-brand span,.neo-brand em{color:#cfe0ff!important}
+.neo-nav-caption{color:#bfd5fb!important}
+.neo-nav-button{
+  color:#eaf3ff!important;
+  border:1px solid transparent!important;
+  background:transparent!important;
+}
+.neo-nav-button:hover{
+  background:rgba(255,255,255,.14)!important;
+  color:#fff!important;
+}
+.neo-nav-button.neo-active{
+  background:#ffffff!important;
+  color:var(--jps-primary-deep)!important;
+  border-color:#d7e6fb!important;
+  box-shadow:0 12px 28px rgba(8,31,79,.18)!important;
+}
+.neo-sidebar-foot{background:rgba(255,255,255,.04)!important}
+.neo-user-meta strong{color:#fff!important}
+.neo-user-meta span{color:#cfe0ff!important}
+.neo-sidebar-foot button{background:rgba(255,255,255,.16)!important;color:#fff!important}
+.neo-topbar{
+  background:rgba(255,255,255,.95)!important;
+  border-bottom:1px solid #d9e6fa!important;
+}
+.neo-breadcrumb span{color:#7694bb!important}
+.neo-breadcrumb strong{color:#173f7f!important}
+.neo-branch-picker{
+  background:#f8fbff!important;
+  color:#18478f!important;
+  border:1px solid #cfe0f8!important;
+  box-shadow:0 4px 12px rgba(31,95,196,.04)!important;
+}
+.neo-avatar-small,.neo-user-avatar{background:#eaf3ff!important;color:#1d5fc2!important}
+.neo-icon-button{
+  background:#f5f9ff!important;
+  border:1px solid #d8e6f9!important;
+  color:#1e5fc3!important;
+}
+.neo-page-heading h1,.neo-page-heading p,.neo-eyebrow{color:var(--jps-primary-deep)!important}
+.neo-eyebrow{opacity:.75}
+.neo-quick-create{
+  background:linear-gradient(135deg,#1f5fc4,#4d8df1)!important;
+  color:#fff!important;
+  box-shadow:0 14px 28px rgba(31,95,196,.22)!important;
+}
+
+/* ---------- forms / buttons / badges ---------- */
+.neo-content input:not([type=checkbox]):not([type=radio]),
+.neo-content select,
+.neo-content textarea,
+.neo-content .input,
+.neo-content .search,
+.neo-content .field,
+.neo-content .date-input{
+  background:#fff!important;
+  color:var(--jps-text)!important;
+  border:1px solid var(--jps-border)!important;
+  box-shadow:none!important;
+}
+.neo-content input::placeholder,
+.neo-content textarea::placeholder{color:#7d95b4!important;opacity:1}
+.neo-content :is(input,select,textarea):focus{
+  border-color:#66a3ff!important;
+  box-shadow:0 0 0 4px rgba(102,163,255,.18)!important;
+}
+.neo-content .btn-primary,
+.neo-content button.btn-primary,
+.neo-content button[type=submit]:not(.btn-soft):not(.btn-link),
+.neo-content .dw-primary,
+.neo-content .dw-save,
+.neo-content .billing-primary{
+  background:linear-gradient(135deg,#1f5fc4,#4d8df1)!important;
+  border:1px solid #1f5fc4!important;
+  color:#fff!important;
+  box-shadow:0 10px 20px rgba(31,95,196,.18)!important;
+}
+.neo-content .btn-primary:hover,
+.neo-content button.btn-primary:hover,
+.neo-content button[type=submit]:not(.btn-soft):not(.btn-link):hover{
+  filter:brightness(1.03)!important;
+}
+.neo-content .btn-soft,
+.neo-content .btn-dark,
+.neo-content .btn-danger,
+.neo-content .dw-outline-btn,
+.neo-content .dw-print,
+.neo-content .billing-secondary,
+.neo-content .tf-secondary{
+  background:#eff6ff!important;
+  color:#1d56ad!important;
+  border:1px solid #cfe0fb!important;
+  box-shadow:none!important;
+}
+.neo-content .badge,
+.neo-content [class*='badge'],
+.neo-content .pill,
+.neo-content .chip,
+.neo-content .status-chip{
+  background:#edf5ff!important;
+  color:#1c57af!important;
+  border:1px solid #d4e3fb!important;
+}
+
+/* ---------- remove red legacy look globally ---------- */
+.neo-content .text-red-400,
+.neo-content .text-red-500,
+.neo-content .text-red-600,
+.neo-content .text-red-700,
+.neo-content .text-rose-500,
+.neo-content .text-rose-600,
+.neo-content .text-pink-500,
+.neo-content .text-pink-600,
+.neo-content .text-green-500,
+.neo-content .text-green-600,
+.neo-content .text-emerald-500,
+.neo-content .text-emerald-600{color:#1d5dc1!important}
+.neo-content .bg-red-50,.neo-content .bg-red-100,
+.neo-content .bg-rose-50,.neo-content .bg-rose-100,
+.neo-content .bg-pink-50,
+.neo-content .bg-green-50,.neo-content .bg-green-100,
+.neo-content .bg-emerald-50,.neo-content .bg-emerald-100{background:#f2f8ff!important}
+.neo-content .bg-red-500,.neo-content .bg-red-600,
+.neo-content .bg-rose-500,.neo-content .bg-rose-600,
+.neo-content .bg-pink-500,
+.neo-content .bg-green-500,.neo-content .bg-green-600,
+.neo-content .bg-emerald-500,.neo-content .bg-emerald-600{background:#2d6dd4!important}
+.neo-content .border-red-200,.neo-content .border-red-300,
+.neo-content .border-rose-200,.neo-content .border-pink-200,
+.neo-content .border-green-200,.neo-content .border-emerald-200{border-color:#cfe0fb!important}
+
+/* ---------- mobile splash and mobile home ---------- */
+.kd-splash{
+  background:radial-gradient(circle at top,#ffffff 0%,#f4f9ff 36%,#e8f2ff 100%)!important;
+  color:var(--jps-text)!important;
+}
+.kd-splash-ambient-one,.kd-splash-ambient-two{background:#ddecff99!important}
+.kd-splash-overline{color:#4472b4!important}
+.kd-splash h1{color:#12345d!important}
+.kd-splash-tagline,.kd-splash-message,.kd-splash small{color:#5f7ea5!important}
+.kd-splash-status{
+  background:linear-gradient(135deg,#1f5fc4,#4d8df1)!important;
+  color:#fff!important;
+  box-shadow:0 12px 26px rgba(31,95,196,.18)!important;
+}
+.kd-splash-dot{background:#dff1ff!important;box-shadow:0 0 0 4px rgba(255,255,255,.24)!important}
+.kd-splash-progress{background:#dbeaff!important}
+.kd-splash-progress span{background:linear-gradient(90deg,#1f5fc4,#7eb4ff)!important}
+.kd-home-hero{
+  background:linear-gradient(180deg,#1b4da2 0%,#2d6dd4 52%,#5da2ff 100%)!important;
+  box-shadow:0 18px 36px rgba(27,77,162,.18)!important;
+}
+.kd-home-live,
+.kd-home-branch{background:rgba(255,255,255,.16)!important;border-color:rgba(255,255,255,.28)!important;color:#fff!important}
+.kd-home-label,.kd-home-hero>p{color:#e5f1ff!important}
+.kd-home-logo-frame{
+  background:radial-gradient(circle,#ffffff 0%,#f0f7ff 72%,#d3e7ff 100%)!important;
+  border:1px solid rgba(255,255,255,.46)!important;
+}
+.kd-home-section-head h2{color:#173e81!important}
+.kd-home-kicker,.kd-home-section-sub,.kd-home-period{color:#6b86a8!important}
+.kd-home-action,
+.kd-home-stat,
+.kd-home-recent-item,
+.kd-home-note,
+.kd-home-empty{
+  background:#fff!important;
+  border:1px solid #d8e7fb!important;
+  box-shadow:var(--jps-shadow-card)!important;
+}
+.kd-home-action.is-primary{
+  background:linear-gradient(135deg,#1f5fc4,#4d8df1)!important;
+  border-color:#1f5fc4!important;
+  color:#fff!important;
+}
+.kd-home-action-icon,
+.kd-home-recent-symbol{background:#ebf4ff!important;color:#1d5fc1!important}
+.kd-home-action.is-primary .kd-home-action-icon{background:rgba(255,255,255,.16)!important;color:#fff!important}
+.kd-home-action-copy strong,.kd-home-recent-item strong,.kd-home-stat strong{color:#143f84!important}
+.kd-home-action-copy small,.kd-home-recent-item small,.kd-home-stat p{color:#6a86a8!important}
+.kd-home-action.is-primary .kd-home-action-copy strong,
+.kd-home-action.is-primary .kd-home-action-copy small,
+.kd-home-action.is-primary .kd-home-action-arrow{color:#fff!important}
+.kd-home-refresh{
+  background:#edf5ff!important;
+  color:#1d5fc1!important;
+  border:1px solid #d4e3fb!important;
+}
+.kd-home-stat.is-red,
+.kd-home-note{
+  background:linear-gradient(180deg,#ffffff 0%,#f4f9ff 100%)!important;
+  border-color:#d8e7fb!important;
+}
+.kd-home-stat>span,.kd-home-note>svg,.kd-home-note button,.kd-home-recent-value{color:#1d5fc1!important}
+
+/* ---------- dashboard readability ---------- */
+.dashboard-page .dashboard-welcome,
+.dashboard-page .dashboard-filter-panel{
+  background:linear-gradient(180deg,#ffffff 0%,#f6faff 100%)!important;
+}
+.dashboard-page .dashboard-filter-panel .btn-primary,
+.dashboard-page .dashboard-filter-panel button[type='button'],
+.dashboard-page .dashboard-filter-panel button[type='submit']{
+  min-height:46px!important;
+}
+.dashboard-page .dashboard-metric{
+  padding:18px!important;
+  border-radius:18px!important;
+}
+.dashboard-page .dashboard-metric h3,
+.dashboard-page .dashboard-metric strong,
+.dashboard-page .dashboard-metric .value{color:#153f84!important}
+.dashboard-page .dashboard-metric p,
+.dashboard-page .dashboard-metric small{color:#6684ab!important}
+
+/* ---------- billing / workflow / ledger specific panels ---------- */
+.neo-content .billing-page .hero,
+.neo-content .trip-finance-page .hero,
+.neo-content .dw-hero,
+.neo-content .billing-hero,
+.neo-content .tf-hero,
+.neo-content .driver-card,
+.neo-content .billing-card,
+.neo-content .workflow-card,
+.neo-content .summary-card,
+.neo-content .record-card{
+  background:#fff!important;
+  border:1px solid #d8e7fb!important;
+  box-shadow:var(--jps-shadow-card)!important;
+}
+.neo-content .dw-step,
+.neo-content .step-chip,
+.neo-content .workflow-step,
+.neo-content .stepper-item{
+  background:#f6faff!important;
+  border:1px solid #d8e7fb!important;
+  color:#163f83!important;
+}
+.neo-content .dw-step.is-active,
+.neo-content .workflow-step.is-active,
+.neo-content .stepper-item.is-active,
+.neo-content .step-chip.is-active{
+  background:linear-gradient(180deg,#edf5ff,#dbeaff)!important;
+  border-color:#76a7ef!important;
+  color:#123a7d!important;
+}
+
+/* ---------- tables ---------- */
+.neo-content table{background:#fff!important}
+.neo-content thead th{
+  background:#edf5ff!important;
+  color:#18468f!important;
+  border-bottom:1px solid #d8e7fb!important;
+}
+.neo-content tbody tr:nth-child(even){background:#fbfdff!important}
+.neo-content td{color:#254a76!important;border-color:#e1ecfb!important}
+
+/* ---------- dialogs / popup ---------- */
+.swal2-popup,
+.capture-modal,
+.receipt-modal,
+.modal,
+.modal-card{
+  background:#fff!important;
+  border:1px solid #d8e7fb!important;
+  box-shadow:0 28px 80px rgba(15,59,128,.16)!important;
+}
+.swal2-title,.swal2-html-container{color:#173f80!important}
+.swal2-confirm{background:linear-gradient(135deg,#1f5fc4,#4d8df1)!important}
+.swal2-cancel,.swal2-deny{background:#edf5ff!important;color:#1d5fc1!important}
+
+/* ---------- mobile polish ---------- */
+@media (max-width: 767px){
+  .neo-topbar{padding-inline:12px!important;height:68px!important}
+  .neo-branch-picker{max-width:178px!important}
+  .neo-content{padding:16px 12px calc(98px + env(safe-area-inset-bottom))!important}
+  .neo-page-heading{margin-bottom:16px!important}
+  .neo-page-heading h1{font-size:24px!important;line-height:1.2!important}
+  .neo-page-heading p:last-child{font-size:12px!important;line-height:1.55!important}
+  .neo-mobile-dock{
+    background:rgba(255,255,255,.96)!important;
+    border-top:1px solid #d9e8fb!important;
+    box-shadow:0 -12px 28px rgba(20,62,134,.12)!important;
+  }
+  .neo-mobile-dock button{color:#6f89ab!important}
+  .neo-mobile-dock button.neo-dock-active{
+    color:#1957b5!important;
+    background:#edf5ff!important;
+  }
+  .dashboard-page .dashboard-metrics,
+  .dashboard-page .dashboard-grid-main{grid-template-columns:1fr!important}
+  .dashboard-page .dashboard-filter-panel{padding:14px!important}
+  .kd-home-actions,.kd-home-stats{grid-template-columns:1fr 1fr!important}
+}
+@media (max-width: 540px){
+  .kd-home-actions,.kd-home-stats{grid-template-columns:1fr!important}
+  .neo-content .dashboard-metric,
+  .neo-content .dw-panel,
+  .neo-content .billing-panel,
+  .neo-content .tf-panel{padding:14px!important;border-radius:18px!important}
+}
+
+/* ensure text remains visible in disabled legacy menu items */
+.neo-sidebar [disabled], .neo-sidebar .is-disabled{opacity:.72!important;color:#dbe9ff!important}
