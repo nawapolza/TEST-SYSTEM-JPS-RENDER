@@ -484,3 +484,158 @@ body{font-feature-settings:'liga' 1,'kern' 1}
   .neo-drawer .neo-nav-button { min-height: 44px !important; margin: 2px 0 !important; border-radius: 11px !important; font-size: 13px !important; }
   .neo-drawer .neo-sidebar-foot { padding: 12px !important; }
 }
+
+/* Calm visual refinement: softer blue surfaces and explicit text contrast.
+   Keep this section last so it wins over old gradients/utility styles. */
+:root{
+  --jps-bg:#f4f7fc;
+  --jps-surface:#ffffff;
+  --jps-surface-2:#f8fbff;
+  --jps-surface-3:#edf4fd;
+  --jps-primary:#285ea8;
+  --jps-primary-2:#3978c9;
+  --jps-primary-deep:#183b68;
+  --jps-border:#d8e3f1;
+  --jps-border-strong:#b9cde6;
+  --jps-text:#1c3554;
+  --jps-text-2:#425d7c;
+  --jps-text-soft:#6b819b;
+  --jps-shadow-soft:0 5px 18px rgba(28,65,112,.055);
+  --jps-shadow-card:0 5px 16px rgba(28,65,112,.055);
+}
+
+/* Never put dark text over saturated blue gradients. Page headers become calm white cards. */
+.neo-content .page-shell .page-orbit,
+.neo-content .page-shell .page-orbit::before,
+.neo-content .page-shell .page-orbit::after,
+.neo-content .page-orbit,
+.neo-content .page-orbit:before,
+.neo-content .page-orbit:after{
+  background:#fff!important;
+  background-image:none!important;
+  color:#183b68!important;
+  border:1px solid #d8e3f1!important;
+  box-shadow:0 5px 18px rgba(28,65,112,.055)!important;
+}
+.neo-content .page-orbit :is(h1,h2,h3,p,span,strong,small,em,label){
+  color:#183b68!important;
+  text-shadow:none!important;
+  opacity:1!important;
+}
+.neo-content .page-orbit .page-orbit-code,
+.neo-content .page-orbit .page-orbit-signal{color:#58779c!important}
+
+/* Replace aggressive blue gradient blocks with low-glare surfaces. */
+.neo-content .card,
+.neo-content .kw-list-card,
+.neo-content .kw-user-tabs,
+.neo-content .page-shell .card,
+.neo-content .page-shell [class*="panel"],
+.neo-content .page-shell [class*="summary"],
+.neo-content .page-shell [class*="hero"],
+.neo-content .page-shell [class*="banner"]{
+  color:#1c3554;
+}
+.neo-content .page-shell [class*="hero"],
+.neo-content .page-shell [class*="banner"]{
+  background-color:#f8fbff!important;
+  background-image:none!important;
+  border-color:#d8e3f1!important;
+}
+.neo-content .page-shell [class*="hero"] :is(h1,h2,h3,p,span,strong,small),
+.neo-content .page-shell [class*="banner"] :is(h1,h2,h3,p,span,strong,small){
+  color:#1c3554!important;
+  text-shadow:none!important;
+}
+
+/* Buttons: one consistent blue, white text, calm shadow, no mixed gradient/text colors. */
+.neo-content button.btn-primary,
+.neo-content .btn-primary,
+.neo-content button[type="submit"]:not(.btn-soft):not(.btn-link),
+.neo-content .kw-add-btn,
+.neo-content .neo-quick-create,
+.neo-content .dw-primary,
+.neo-content .dw-save,
+.neo-content .billing-primary{
+  background:#2864b3!important;
+  background-image:none!important;
+  color:#fff!important;
+  border:1px solid #2864b3!important;
+  box-shadow:0 4px 12px rgba(40,100,179,.14)!important;
+  text-shadow:none!important;
+  font-weight:650!important;
+}
+.neo-content button.btn-primary:hover,
+.neo-content .btn-primary:hover,
+.neo-content .kw-add-btn:hover{
+  background:#1e518f!important;
+  border-color:#1e518f!important;
+}
+.neo-content .btn-soft,
+.neo-content button.btn-soft,
+.neo-content .btn-secondary,
+.neo-content .kw-list-actions button,
+.neo-content .kw-user-tabs button{
+  background:#f2f6fc!important;
+  background-image:none!important;
+  color:#234e83!important;
+  border:1px solid #d5e1f0!important;
+  box-shadow:none!important;
+}
+.neo-content .kw-user-tabs button.is-active{
+  background:#e4effd!important;
+  color:#183f70!important;
+  border-color:#a9c6eb!important;
+  font-weight:700!important;
+}
+
+/* Prevent opacity and inherited color classes from fading menu labels or controls. */
+.neo-sidebar .neo-nav-button,
+.neo-sidebar .neo-nav-button :is(span,svg),
+.neo-sidebar .neo-nav-caption,
+.neo-sidebar .neo-brand :is(strong,span,em),
+.neo-sidebar .neo-sidebar-foot :is(span,strong){opacity:1!important}
+.neo-sidebar .neo-nav-button{color:#eaf2ff!important}
+.neo-sidebar .neo-nav-button.neo-active{color:#183b68!important}
+.neo-sidebar .neo-nav-button.neo-active :is(span,svg){color:#183b68!important;stroke:currentColor!important}
+.neo-sidebar .neo-nav-caption{color:#c8dcf7!important}
+.neo-sidebar .neo-brand :is(strong,span,em){color:#fff!important}
+.neo-sidebar .neo-user-meta span{color:#d6e5fb!important}
+
+/* Clear typography and form fields across all screens. */
+.neo-content :is(h1,h2,h3,h4,h5,h6,.page-title,.section-title){
+  color:#183b68!important;
+  text-shadow:none!important;
+  opacity:1!important;
+}
+.neo-content :is(p,label,small,.label,.page-subtitle,.helper-text){text-shadow:none!important}
+.neo-content :is(input,select,textarea,.input){
+  background:#fff!important;
+  color:#1c3554!important;
+  border-color:#cbd9ea!important;
+}
+.neo-content :is(input,select,textarea,.input)::placeholder{color:#7a8fa9!important;opacity:1!important}
+.neo-content :is(input,select,textarea,.input):focus{outline:none!important;border-color:#75a5df!important;box-shadow:0 0 0 3px rgba(65,126,199,.13)!important}
+.neo-content table th{background:#f0f5fc!important;color:#244b7b!important}
+.neo-content table td{color:#304c6d!important}
+
+/* Override common legacy red/gradient utility surfaces without changing alert semantics to unreadable colors. */
+.neo-content [class*="bg-gradient"]{background-image:none!important}
+.neo-content [class*="from-blue-"],
+.neo-content [class*="to-blue-"],
+.neo-content [class*="via-blue-"]{--tw-gradient-from:#f7faff!important;--tw-gradient-to:#edf4fd!important;--tw-gradient-stops:#f7faff,#edf4fd!important}
+.neo-content [class*="from-red-"],.neo-content [class*="to-red-"],
+.neo-content [class*="from-rose-"],.neo-content [class*="to-rose-"],
+.neo-content [class*="from-pink-"],.neo-content [class*="to-pink-"]{
+  background-color:#f7faff!important;
+  background-image:none!important;
+}
+.neo-content [class*="text-red-"],.neo-content [class*="text-rose-"],.neo-content [class*="text-pink-"]{color:#285ea8!important}
+
+@media(max-width:767px){
+  .neo-content .page-shell .page-orbit{padding:16px!important;border-radius:18px!important}
+  .neo-content .page-shell .page-title{font-size:22px!important;line-height:1.3!important}
+  .neo-content .kw-add-btn{width:100%!important;min-height:46px!important;margin:12px 0!important}
+  .neo-content .kw-user-tabs{display:grid!important;grid-template-columns:1fr!important;gap:8px!important}
+  .neo-content .kw-user-tabs button{min-height:44px!important;text-align:left!important}
+}
