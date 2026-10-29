@@ -45,3 +45,5 @@ import './jps-quality-pass.css';
 import './jps-blue-white-complete.css'; // final unified blue/white system-wide theme
 
 import './jps-ux-hotfix-2026.css';
+
+import './jps-calm-contrast-final.css';

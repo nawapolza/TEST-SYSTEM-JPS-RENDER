@@ -1,0 +1,113 @@
+/* JPS Calm Contrast final pass: keep every text/background pair readable. */
+:root{
+  --jps-calm-bg:#f3f7fc;
+  --jps-calm-surface:#ffffff;
+  --jps-calm-soft:#edf4fc;
+  --jps-calm-soft2:#e3eefb;
+  --jps-calm-blue:#285da8;
+  --jps-calm-blue-dark:#173f78;
+  --jps-calm-blue-hover:#214f91;
+  --jps-calm-border:#d5e2f2;
+  --jps-calm-text:#203b5d;
+  --jps-calm-muted:#647d9b;
+}
+html,body,#root{background:var(--jps-calm-bg)!important;color:var(--jps-calm-text)!important}
+
+/* Legacy hero blocks used to combine blue gradients with dark-blue headings. */
+.page-orbit,.hero,.page-hero,.hero-clean,.ledger-hero,.kw-finance-net,
+.neo-content .page-orbit,.neo-content .hero,.neo-content .page-hero{
+  background:linear-gradient(135deg,#ffffff 0%,#f4f8fe 100%)!important;
+  color:var(--jps-calm-text)!important;
+  border:1px solid var(--jps-calm-border)!important;
+  border-left:4px solid #78a4df!important;
+  border-radius:18px!important;
+  box-shadow:0 5px 18px rgba(30,67,115,.055)!important;
+}
+.page-orbit *,.hero *,.page-hero *,.hero-clean *,.ledger-hero *,
+.neo-content .page-orbit *{
+  text-shadow:none!important;
+  opacity:1!important;
+}
+.page-orbit .page-title,.page-orbit h1,.page-orbit h2,
+.hero .page-title,.hero h1,.page-hero h1,.hero-clean h1,.ledger-hero h1,
+.neo-content .page-orbit .page-title,.neo-content .page-orbit h1{
+  color:var(--jps-calm-blue-dark)!important;
+  font-weight:800!important;
+}
+.page-orbit .page-subtitle,.page-orbit p,.page-orbit-code,.page-orbit-signal,
+.hero p,.hero-clean p,.ledger-hero p,.ledger-eyebrow,
+.neo-content .page-orbit .page-subtitle{
+  color:var(--jps-calm-muted)!important;
+}
+.page-orbit-code{letter-spacing:.12em!important}
+.page-orbit-signal{background:#eaf2fc!important;border:1px solid #d4e2f4!important;border-radius:999px!important}
+
+/* Buttons: solid blue, white text; avoid text on blue gradients with poor contrast. */
+.btn-primary,.button-primary,.primary-button,.submit-primary,
+button.primary,button[type=submit],input[type=submit],.kw-add-btn,
+.neo-content .btn-primary,.neo-content button.btn-primary,
+.neo-content button[type=submit]:not(.btn-soft):not(.btn-link),
+.kd-home-action.is-primary{
+  background:#285da8!important;
+  background-image:none!important;
+  color:#fff!important;
+  border:1px solid #285da8!important;
+  border-radius:12px!important;
+  font-weight:750!important;
+  box-shadow:0 4px 10px rgba(40,93,168,.12)!important;
+  text-shadow:none!important;
+}
+.btn-primary:hover,.button-primary:hover,.primary-button:hover,.submit-primary:hover,
+button.primary:hover,button[type=submit]:hover,.kw-add-btn:hover,
+.neo-content .btn-primary:hover,.neo-content button.btn-primary:hover{
+  background:#214f91!important;background-image:none!important;color:#fff!important;
+}
+.btn-soft,.btn-ghost,.btn-dark,.dw-outline-btn,.dw-print,.billing-secondary,.tf-secondary,
+.neo-content .btn-soft,.neo-content .btn-dark{
+  background:#f4f8fd!important;background-image:none!important;color:#28558f!important;
+  border:1px solid #d2e0f2!important;box-shadow:none!important;
+}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:3px solid #8ab6ee!important;outline-offset:2px!important;
+}
+
+/* Remove legacy red / pink accents without turning status text low-contrast. */
+.text-red-400,.text-red-500,.text-red-600,.text-red-700,.text-rose-500,.text-rose-600,
+.text-pink-500,.text-pink-600,.text-emerald-500,.text-emerald-600,.text-green-500,.text-green-600{
+  color:#285da8!important;
+}
+.bg-red-50,.bg-red-100,.bg-rose-50,.bg-rose-100,.bg-pink-50,.bg-green-50,.bg-green-100,
+.bg-emerald-50,.bg-emerald-100{background:#edf4fc!important}
+.border-red-200,.border-red-300,.border-rose-200,.border-pink-200,.border-green-200,.border-emerald-200{
+  border-color:#d5e2f2!important;
+}
+
+/* User-management page: calm hierarchy and no cramped card overlap. */
+.kw-user-tabs{background:#edf4fc!important;border:1px solid var(--jps-calm-border)!important;border-radius:14px!important;padding:5px!important;gap:5px!important}
+.kw-user-tabs button{background:#fff!important;color:#456383!important;border:1px solid #d5e2f2!important;border-radius:10px!important;min-height:42px!important}
+.kw-user-tabs button.is-active{background:#dceafb!important;color:#173f78!important;border-color:#a9c6eb!important;box-shadow:none!important}
+.kw-list-card,.kw-list-toolbar,.kw-list-table,.kw-list-scroll{background:#fff!important;border-color:#d5e2f2!important}
+.kw-list-table th{background:#edf4fc!important;color:#244d80!important}
+.kw-list-table td{color:#304d70!important;border-color:#e5edf7!important}
+.kw-list-actions button{background:#f3f7fc!important;color:#28558f!important;border:1px solid #d5e2f2!important;border-radius:9px!important}
+.kw-list-actions .kw-user-remove{background:#edf4fc!important;color:#28558f!important;border-color:#d5e2f2!important}
+
+/* Inputs, labels, and informational panels. */
+label,.label,.field-label{color:#355678!important}
+input:not([type=checkbox]):not([type=radio]),select,textarea,.input{
+  color:#203b5d!important;background:#fff!important;border-color:#d1dfef!important;
+}
+input::placeholder,textarea::placeholder{color:#8194ab!important;opacity:1!important}
+.card,.section-card,.panel,.kw-list-card,.kw-list-toolbar{
+  border-color:#d9e4f2!important;box-shadow:0 4px 15px rgba(35,69,111,.045)!important;
+}
+
+@media(max-width:640px){
+  .page-orbit,.hero,.page-hero,.hero-clean,.ledger-hero,.kw-finance-net{
+    padding:15px!important;border-radius:16px!important;gap:10px!important;
+  }
+  .page-orbit .page-title,.page-orbit h1,.page-orbit h2{font-size:1.35rem!important;line-height:1.35!important}
+  .kw-add-btn{width:100%!important;min-height:46px!important;margin-top:10px!important}
+  .kw-user-tabs{display:grid!important;grid-template-columns:1fr!important}
+  .kw-user-tabs button{width:100%!important;text-align:center!important}
+}
